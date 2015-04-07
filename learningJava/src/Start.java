@@ -2,12 +2,25 @@
  * Created by ruaval on 07.04.2015.
  */
 
-import com.javable.lessons.lesson7.Derived;
-
 public class Start {
     public static void main(String[] args) {
-        Derived d = new Derived("test", 10);
-        long c = d.g(5);
-        long p = d.f();
+
+        start("com.javable.lessons.lesson7.Dialog3");
     }
+
+    public static void start(String className) {
+        try {
+            Class c = Class.forName(className);
+            Object obj = c.newInstance();
+
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        } catch (InstantiationException e) {
+            e.printStackTrace();
+        } catch (IllegalAccessException e) {
+            e.printStackTrace();
+
+        }
+    }
+
 }

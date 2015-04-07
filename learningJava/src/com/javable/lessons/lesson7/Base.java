@@ -3,7 +3,7 @@ package com.javable.lessons.lesson7;
 /**
  * Created by ruaval on 07.04.2015.
  */
-class Base {
+public class Base {
     int x = 1;
     long y;
 
@@ -12,7 +12,7 @@ class Base {
     }
 
     Base() {
-        this(0);   // вызов конструктора Base(long y)
+        this(0);   // РІС‹Р·РѕРІ РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂР° Base(long y)
     }
 
     public long f() {

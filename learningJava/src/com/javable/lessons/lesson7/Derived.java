@@ -8,12 +8,25 @@ public class Derived extends Base {
     String name = "";
 
     public Derived(String name, long par) {
-        super(par);   // вызов конструктора Base(long y)
+        super(par);   // РІС‹Р·РѕРІ РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂР° Base(long y)
         this.name = name;
     }
 
+    public Derived() {
+        main();
+    }
+
+    public static void main() {
+        Derived d = new Derived("test", 10);
+        long c = d.g(5);
+        long p = d.f();
+
+        System.out.println(c);
+        System.out.println(p);
+    }
+
     public long g(int r) {
-        return r + super.f();   // вызов метода f() класса Base
+        return r + super.f();   // РІС‹Р·РѕРІ РјРµС‚РѕРґР° f() РєР»Р°СЃСЃР° Base
     }
 
     public long f() {
