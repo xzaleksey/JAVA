@@ -5,13 +5,13 @@
 public class Start {
     public static void main(String[] args) {
 
-        start("com.javable.lessons.lesson7.Dialog3");
+        start("com.javable.lessons.lesson7.Dialog3");// Создание экземпляра класса по названию
     }
 
     public static void start(String className) {
-        try {
-            Class c = Class.forName(className);
-            Object obj = c.newInstance();
+        try {//обработка ошибок
+            Class c = Class.forName(className);//получить класс по его имени
+            Object obj = c.newInstance(); //создать экземпляр
 
         } catch (ClassNotFoundException e) {
             e.printStackTrace();

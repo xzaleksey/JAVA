@@ -3,7 +3,7 @@ package com.javable.lessons.lesson7;
 /**
  * Created by ruaval on 07.04.2015.
  */
-
+//На базе Dialog3 сделать программу. Эта программа принимает N параметров вызова (для получения N использовать args.length). Эти параметры - элементы вектора. Она строит массив типа double. Потом на базе этого массива - класс DoubleVector. Потом выводит в текстовую область txt значения элементов вектора в виде:
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.WindowAdapter;
@@ -14,7 +14,7 @@ public class Dialog3 extends JFrame {
     JTextArea txt;
 
     Dialog3(String s) {
-        super(s);
+        super(s); //имя приложения
 
         try {
             UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
@@ -37,7 +37,7 @@ public class Dialog3 extends JFrame {
         setVisible(true);
     }
 
-    public Dialog3() {
+    public Dialog3() { //конструктор базовый
         main(new double[]{1.0, 10.0, 9.0, 8.0});
     }
 
