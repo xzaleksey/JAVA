@@ -11,7 +11,6 @@ import java.awt.event.WindowEvent;
 import java.awt.event.WindowListener;
 
 public class Dialog3 extends JFrame {
-    private static final String ENCODING_UTF8 = "UTF-8";
     JTextArea txt;
 
     Dialog3(String s) {
@@ -39,16 +38,20 @@ public class Dialog3 extends JFrame {
     }
 
     public Dialog3() {
-        main();
+        main(new double[]{1.0, 10.0, 9.0, 8.0});
     }
 
-    public static void main() {
-        Dialog3 d = new Dialog3("Визульное приложения с текстовой областью");
-        d.test();
+    public static void main(double args[]) {
+        Dialog3 d = new Dialog3("Визуальное приложение");
+        d.test(args);
     }
 
-    public void test() {
-        txt.append("Первая строка\n");
-        txt.append("Вторая строка\n");
+    public void test(double args[]) {
+        DoubleVector vector = new DoubleVector(args);
+        double v[] = vector.getVector();
+        for (int i = 0; i < args.length; i++) {
+            txt.append(v[i] + "\n");
+        }
+
     }
 }
