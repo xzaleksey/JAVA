@@ -1,3 +1,5 @@
+import com.javable.lessons.lesson9.Single;
+
 /**
  * @author Алексей Валякин
  * @version 1.0
@@ -5,8 +7,9 @@
 
 public class Start {
     public static void main(String[] args) {
-
-        start("com.javable.lessons.lesson7.Dialog3");// Создание экземпляра класса по названию
+        Single a = Single.getInstance();
+        Single b = Single.getInstance();
+        // start("com.javable.lessons.lesson9.Single");// Создание экземпляра класса по названию
     }
 
     public static void start(String className) {
