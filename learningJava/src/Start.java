@@ -1,5 +1,6 @@
 /**
- * Created by ruaval on 07.04.2015.
+ * @author Алексей Валякин
+ * @version 1.0
  */
 
 public class Start {
@@ -10,7 +11,9 @@ public class Start {
 
     public static void start(String className) {
         try {//обработка ошибок
+            //TODO: Определение  класса
             Class c = Class.forName(className);//получить класс по его имени
+
             Object obj = c.newInstance(); //создать экземпляр
 
         } catch (ClassNotFoundException e) {
