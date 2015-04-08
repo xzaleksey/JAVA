@@ -9,6 +9,7 @@ public class Start {
     public static void main(String[] args) {
         Single a = Single.getInstance();
         Single b = Single.getInstance();
+        //мой комментарий
         // start("com.javable.lessons.lesson9.Single");// Создание экземпляра класса по названию
     }
 
