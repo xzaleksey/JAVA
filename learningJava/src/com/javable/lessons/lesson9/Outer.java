@@ -18,6 +18,9 @@ public class Outer {
     }
 
     public class Inner1 {    // Вложенный класс. Размещен внутри класса Outer
+        public int f1() {
+            return ++y;
+        }
 
     }
 

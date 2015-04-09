@@ -1,4 +1,4 @@
-import com.javable.lessons.lesson9.Single;
+import net.wikijava.Chapter4.VowelsAndConsonants;
 
 /**
  * @author Алексей Валякин
@@ -7,9 +7,11 @@ import com.javable.lessons.lesson9.Single;
 
 public class Start {
     public static void main(String[] args) {
-        Single a = Single.getInstance();
-        Single b = Single.getInstance();
-        // start("com.javable.lessons.lesson9.Single");// Создание экземпляра класса по названию
+//Vowels
+        String s[] = new String[5];
+        VowelsAndConsonants.main(s);
+
+        //start("net.wikijava.Chapter4.LabeledFor");// Создание экземпляра класса по названию
     }
 
     public static void start(String className) {
