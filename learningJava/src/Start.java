@@ -1,5 +1,3 @@
-import net.wikijava.Chapter4.VowelsAndConsonants;
-
 /**
  * @author Алексей Валякин
  * @version 1.0
@@ -7,11 +5,8 @@ import net.wikijava.Chapter4.VowelsAndConsonants;
 
 public class Start {
     public static void main(String[] args) {
-//Vowels
-        String s[] = new String[5];
-        VowelsAndConsonants.main(s);
 
-        //start("net.wikijava.Chapter4.LabeledFor");// Создание экземпляра класса по названию
+        start("net.wikijava.Chapter5.Person");// Создание экземпляра класса по названию
     }
 
     public static void start(String className) {
