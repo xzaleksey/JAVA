@@ -12,6 +12,7 @@ public class Outer {
         class Inner2 {
 
             public int f(int r) {
+                System.out.println(r * k + j);
                 return r * k + j;        // Здесь и j и k должны быть final
             }
         }
@@ -35,5 +36,7 @@ class Outside {
         Outer t1 = new Outer();
         Outer.Inner1 i2 = t1.new Inner1();
         i2.f();
+        t1.g(5);
+
     }
 }

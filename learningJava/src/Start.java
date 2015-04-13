@@ -25,7 +25,6 @@ public class Start {
         System.out.println("d2 = " + d2);
 
 
-        //   start("net.wikijava.chapter5.Person");// Создание экземпляра класса по названию
     }
 
     public static void start(String className) {

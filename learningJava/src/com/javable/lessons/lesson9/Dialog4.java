@@ -10,12 +10,16 @@ import java.awt.event.*;
 
 public class Dialog4 extends JFrame {
 
-    JTextField fld = new JTextField();
-    JButton btn = new JButton("Нажать нежно");
-    JLabel lbl = new JLabel(" ");
 
+    JTextField fldIn = new JTextField(20);
+    JTextField fldOut = new JTextField(20);
     Dialog4() {
+
         super("Слушатели (listeners) полей и кнопок");
+
+        JButton btn = new JButton("Нажать нежно");
+        JLabel lblIn = new JLabel("Поле ввода");
+        JLabel lblOut = new JLabel("Поле вывода");
 
         try {
             UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
@@ -24,17 +28,29 @@ public class Dialog4 extends JFrame {
 
         setSize(400, 150);
         Container c = getContentPane();
-        c.add(lbl, BorderLayout.NORTH);
-        c.add(fld, BorderLayout.CENTER);
-        c.add(btn, BorderLayout.SOUTH);
-        fld.addActionListener(new ActionListener() {
+        JPanel jPanelIn = new JPanel();
+        JPanel jPanelOut = new JPanel();
+        JPanel jPanelbtn = new JPanel();
+        //
+        c.add(jPanelIn, BorderLayout.NORTH);
+        c.add(jPanelOut, BorderLayout.CENTER);
+        c.add(jPanelbtn, BorderLayout.SOUTH);
+        //
+        jPanelIn.add(lblIn, BorderLayout.CENTER);
+        jPanelIn.add(fldIn, BorderLayout.CENTER);
+        //
+        jPanelOut.add(lblOut, BorderLayout.CENTER);
+        jPanelOut.add(fldOut, BorderLayout.CENTER);
+        //
+        jPanelbtn.add(btn, BorderLayout.SOUTH);
+        fldIn.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                lbl.setText("Введен текст:" + fld.getText());
+                fldOut.setText("Введен текст:" + fldIn.getText());
             }
         });
         btn.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                lbl.setText("Нажата кнопка");
+                fldOut.setText("Нажата кнопка");
             }
         });
         WindowListener wndCloser = new WindowAdapter() {

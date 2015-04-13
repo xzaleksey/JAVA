@@ -8,6 +8,7 @@ class Person {
     public void eat(Apple apple) {
         System.out.println("хочу яблоко");
         Apple peeled = apple.getPeeled();
+        System.out.println(peeled);
         System.out.println("Yummy");
     }
 }
