@@ -11,6 +11,9 @@ public class Start {
         Single b = Single.getInstance();
         //мой комментарий
         // start("com.javable.lessons.lesson9.Single");// Создание экземпляра класса по названию
+        int[] arr = {1, 2};
+
+        int x = arr.length;
     }
 
     public static void start(String className) {
