@@ -11,6 +11,7 @@ public class A { //наследование
         A a = new A();
         B b = new B();
         a = b;
+
         a.x = new Integer(4);
         System.out.println();
         System.out.println(a.getClass());
