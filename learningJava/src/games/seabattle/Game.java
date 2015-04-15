@@ -15,8 +15,18 @@ class Game {
             System.out.println("Корабль:" + counter);
             counter++;
             for (Cell c : cells) {
-                System.out.println("номер строки: " + c.getRow() + " номер столбца: " + c.getColumn());
+                System.out.println("номер строки: " + c.getRow() + " номер столбца: " + ((int) c.getColumn() - 1072));
             }
+        }
+        for (int i = 0; i < Field.COUNT; i++) {
+            for (int j = 0; j < Field.COUNT; j++) {
+                if (field.cells[i][j].getShip() != null) {
+                    System.out.print(1 + " ");
+                } else {
+                    System.out.print(0 + " ");
+                }
+            }
+            System.out.println();
         }
     }
 
