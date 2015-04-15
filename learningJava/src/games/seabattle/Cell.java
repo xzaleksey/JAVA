@@ -2,6 +2,7 @@ package games.seabattle;
 
 class Cell {
     static final String NEW = "new";
+    static final String BUSY = "busy";
     static final String SHOT = "shot";
     private String status = NEW;
     private Ship ship;

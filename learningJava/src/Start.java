@@ -16,7 +16,6 @@ public class Start {
     }
     public static void main(String[] args) {
         Random rnd = new Random();
-        String[] result = {"верх", "лево", "право", "низ"};
         int[] dir = {0, 1, 2, 3};
         int counter = dir.length - 1;//длина массива
         while (counter > 0) { //перемешиваем массив
@@ -51,20 +50,20 @@ public class Start {
     }
 
     public static void start(String className) {
+        Class c;
         try {//обработка ошибок
             //TODO: Определение  класса
-            Class c = Class.forName(className);//получить класс по его имени
-
-            Object obj = c.newInstance(); //создать экземпляр
-
+            c = Class.forName(className);//получить класс по его имени
+            try {
+                Object obj = c.newInstance(); //создать экземпл
+            } catch (InstantiationException e) {
+                e.printStackTrace();
+            } catch (IllegalAccessException e) {
+                e.printStackTrace();
+            }
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
-        } catch (InstantiationException e) {
-            e.printStackTrace();
-        } catch (IllegalAccessException e) {
-            e.printStackTrace();
-
         }
-    }
 
+    }
 }

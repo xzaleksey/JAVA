@@ -9,7 +9,15 @@ class Game {
     private int numOfShots = 0;
 
     Game() {
-
+        int counter = 1;
+        for (Ship i : field.ships) {
+            Cell[] cells = i.getCoordinates();
+            System.out.println("Корабль:" + counter);
+            counter++;
+            for (Cell c : cells) {
+                System.out.println("номер строки: " + c.getRow() + " номер столбца: " + c.getColumn());
+            }
+        }
     }
 
     void input() throws IOException {
@@ -21,6 +29,14 @@ class Game {
         } else {
             output("Ошибка при вводе. Формат ввода: а1");
             input();
+        }
+    }
+
+    void start() {
+        try {
+            input();
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
 

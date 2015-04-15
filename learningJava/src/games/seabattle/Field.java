@@ -6,9 +6,9 @@ class Field {
     static final int COUNT = 10;
     static char[] chars = {'а', 'б', 'в', 'г', 'д', 'е', 'ж', 'з', 'и', 'к'};
     static int[] shipsTypes = {1, 2, 3, 4};// 4 типа(по длине) с количеством кораблей, где 0 индекс - длина корабля длина - индекс.
+    private static Random rnd = new Random();
     Ship[] ships = new Ship[COUNT]; //10 кораблей массив
     Cell[][] cells = new Cell[COUNT][COUNT];
-    private static Random rnd = new Random();
 
     Field() { // создание поля
 
@@ -19,6 +19,13 @@ class Field {
                 cells[i][j].setColumn(chars[j]);
             }
         fillWithShips();
+    }
+
+    public static int[] swap(int[] array, int index1, int index2) {
+        int tmp = array[index1];
+        array[index1] = array[index2];
+        array[index2] = tmp;
+        return array;
     }
 
     void fillWithShips() {
@@ -34,12 +41,12 @@ class Field {
 
     void putShip(Ship ship) {
 
-        int startCellRow = rnd.nextInt(COUNT + 1);// получаем параметрын начальной клетки
-        int startCellColumn = rnd.nextInt(COUNT + 1);
-        if (cells[startCellRow][startCellColumn].getShip() != null) {
+        int startCellRow = rnd.nextInt(COUNT);// получаем параметрын начальной клетки
+        int startCellColumn = rnd.nextInt(COUNT);
+        if (cells[startCellRow][startCellColumn].getShip() == null) {
             Boolean dir;
-            Cell coordinates[] = ship.getCoordinates(); //массив клеток корабля
-            dir = getDirection(startCellRow, startCellColumn, ship.getLength(), ship); //в какую сторону будем корабль от начальной клетки ставить
+            //  Cell coordinates[] = ship.getCoordinates(); //массив клеток корабля
+            dir = getDirection(startCellRow - 1, startCellColumn - 1, ship.getLength(), ship); //в какую сторону будем корабль от начальной клетки ставить
             if (!dir) {//если хоть 1 направление подошло
                 putShip(ship);
             }
@@ -82,7 +89,7 @@ class Field {
                 incRow = 1;//вниз
         }
 
-        for (int i = 1; i <= length; i++) {
+        for (int i = 0; i < length; i++) {
             try {
                 cells[row + i * incRow][col + i * incCol].getColumn();
             } catch (Exception e) {
@@ -90,51 +97,11 @@ class Field {
             }
         }
         Cell[] coordinates = ship.getCoordinates();
-        for (int i = 1; i <= length; i++) {
+        for (int i = 0; i < length; i++) {
             cells[row + i * incRow][col + i * incCol].setShip(ship);
-            coordinates[i - 1] = cells[row + i * incRow][col + i * incCol];
+            coordinates[i] = cells[row + i * incRow][col + i * incCol];
         }
         ship.setCoordinates(coordinates);
         return true;
-    }
-
-    Boolean checkAndSetDir(int row, int col, int length, int d, Ship ship) {
-        int incRow = 0;//i строка
-        int incCol = 0;//j столбец
-        switch (d) {
-            case 0: //влево
-                incCol = -1;
-                break;
-            case 1://вверх
-                incRow = -1;
-                break;
-            case 2://вправо
-                incCol = 1;
-                break;
-            case 3:
-                incRow = 1;//вниз
-        }
-
-        for (int i = 1; i <= length; i++) {
-            try {
-                cells[row + i * incRow][col + i * incCol].getColumn();
-            } catch (Exception e) {
-                return false;
-            }
-        }
-        Cell[] coordinates = ship.getCoordinates();
-        for (int i = 1; i <= length; i++) {
-            cells[row + i * incRow][col + i * incCol].setShip(ship);
-            coordinates[i - 1] = cells[row + i * incRow][col + i * incCol];
-        }
-        ship.setCoordinates(coordinates);
-        return true;
-    }
-
-    public static int[] swap(int[] array, int index1, int index2) {
-        int tmp = array[index1];
-        array[index1] = array[index2];
-        array[index2] = tmp;
-        return array;
     }
 }

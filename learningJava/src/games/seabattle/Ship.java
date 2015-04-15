@@ -5,6 +5,11 @@ class Ship {
     static final String DEAD = "dead";
     String status = ALIVE;
     private Cell[] coordinates;
+    private int length;
+
+    Ship(int length) {
+        setLength(length);
+    }
 
     public int getLength() {
         return length;
@@ -15,23 +20,12 @@ class Ship {
         coordinates = new Cell[length];
     }
 
-    private int length;
-
     public Cell[] getCoordinates() {
         return coordinates;
     }
 
     public void setCoordinates(Cell[] coordinates) {
         this.coordinates = coordinates;
-    }
-
-
-    public void setCoordinates(Cell[] coordinates) {
-        this.coordinates = coordinates;
-    }
-
-    Ship(int length) {
-        this.length = length;
     }
 
 
