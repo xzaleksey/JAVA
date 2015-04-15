@@ -1,4 +1,4 @@
-package com.javable.lessons.ru.media.samsu.lectures.lecture1;
+package ru.media.samsu.lectures.lecture1;
 
 
 import java.io.BufferedReader;
@@ -157,14 +157,16 @@ public class Calculate {
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
         String[] input = bufferedReader.readLine().split(" ");
         String type = Calculate.checkType(input);
+
+
         if (type.equals("int")) {
             test(convertInt(input));
         } else if (type.equals("double")) {
             test(convertDouble(input));
         } else {
             System.out.println("Тип не соответствует");
-        }
 
+        }
 
     }
 
