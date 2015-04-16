@@ -39,11 +39,30 @@ class Field {
         }
     }
 
+    boolean checkCell(Ship ship, int row, int col) {
+        try {
+            return cells[row][col].getShip() == null || cells[row][col].getShip() == ship;
+        } catch (Exception e) {
+            return true;
+        }
+    }
+
+    boolean checkAdjustCells(Ship ship, int row, int col) {//проверка соседних клеток на корабли
+        for (int i = -1; i < 2; i++) {
+            for (int j = -1; j < 2; j++) {
+                if (!checkCell(ship, row + i, col + j)) {
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
+
     void putShip(Ship ship) {
 
         int startCellRow = rnd.nextInt(COUNT);// получаем параметрын начальной клетки
         int startCellColumn = rnd.nextInt(COUNT);
-        if (cells[startCellRow][startCellColumn].getShip() == null) {
+        if (checkCell(ship, startCellRow, startCellColumn)) {
             Boolean dir;
             //  Cell coordinates[] = ship.getCoordinates(); //массив клеток корабля
             dir = getDirection(startCellRow - 1, startCellColumn - 1, ship.getLength(), ship); //в какую сторону будем корабль от начальной клетки ставить
@@ -91,7 +110,10 @@ class Field {
 
         for (int i = 0; i < length; i++) {
             try {
-                cells[row + i * incRow][col + i * incCol].getColumn();
+                cells[row + i * incRow][col + i * incCol].getColumn(); //проверка на край
+                if (!checkAdjustCells(ship, row + i * incRow, col + i * incCol)) {  //проверка соседних на корабли
+                    return false;
+                }
             } catch (Exception e) {
                 return false;
             }
