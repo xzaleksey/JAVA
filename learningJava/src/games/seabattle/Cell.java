@@ -1,19 +1,18 @@
 package games.seabattle;
 
 class Cell {
-    static final String NEW = "new";
-    static final String BUSY = "busy";
-    static final String SHOT = "shot";
-    private String status = NEW;
+    static final boolean NEW = true;
+    static final boolean SHOT = false;
+    private boolean status = NEW;
     private Ship ship;
     private int row;
     private char column;
 
-    public String getStatus() {
+    public boolean getStatus() {
         return status;
     }
 
-    public void setStatus(String status) {
+    public void setStatus(boolean status) {
         this.status = status;
     }
 

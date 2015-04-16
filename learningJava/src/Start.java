@@ -1,5 +1,3 @@
-import java.util.ArrayList;
-
 /**
  * @author Алексей Валякин
  * @version 1.0
@@ -11,9 +9,9 @@ public class Start {
 
     public static void main(String[] args) {
 
-        ArrayList<String> list = new ArrayList<String>();
-        list.add("s");
-        list.remove("n");
+        for (int i = 1072; i < 1092; i++) {
+            System.out.println((char) i + " " + i);
+        }
     }
 
     public static void start(String className) {

@@ -21,14 +21,14 @@ class Field {
         fillWithShips();
     }
 
-    public static int[] swap(int[] array, int index1, int index2) {
+    public static int[] swap(int[] array, int index1, int index2) {//метод смены элементов в массиве
         int tmp = array[index1];
         array[index1] = array[index2];
         array[index2] = tmp;
         return array;
     }
 
-    void fillWithShips() {
+    void fillWithShips() {//создание кораблей на поле
         int counter = 0;
         for (int i = 0; i < shipsTypes.length; i++) {// перебираем типы
             for (int j = 0; j < shipsTypes[i]; j++) {
@@ -39,7 +39,7 @@ class Field {
         }
     }
 
-    boolean checkCell(Ship ship, int row, int col) {
+    boolean checkCell(Ship ship, int row, int col) {// проверка на подходящую клетку
         try {
             return cells[row][col].getShip() == null || cells[row][col].getShip() == ship;
         } catch (Exception e) {
@@ -108,7 +108,7 @@ class Field {
                 incRow = 1;//вниз
         }
 
-        for (int i = 0; i < length; i++) {
+        for (int i = 0; i < length; i++) {//проверка на добавление корабля
             try {
                 cells[row + i * incRow][col + i * incCol].getColumn(); //проверка на край
                 if (!checkAdjustCells(ship, row + i * incRow, col + i * incCol)) {  //проверка соседних на корабли
@@ -119,7 +119,7 @@ class Field {
             }
         }
         Cell[] coordinates = ship.getCoordinates();
-        for (int i = 0; i < length; i++) {
+        for (int i = 0; i < length; i++) {// создание корабля
             cells[row + i * incRow][col + i * incCol].setShip(ship);
             coordinates[i] = cells[row + i * incRow][col + i * incCol];
         }

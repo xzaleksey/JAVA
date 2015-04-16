@@ -7,7 +7,7 @@ import java.io.InputStreamReader;
 class Game {
     Field field = new Field();
     private int numOfShots = 0;
-
+    private int shipCount = Field.COUNT;
     Game() {
         int counter = 1;
         for (Ship i : field.ships) {
@@ -18,24 +18,41 @@ class Game {
                 System.out.println("номер строки: " + c.getRow() + " номер столбца: " + ((int) c.getColumn() - 1072));
             }
         }
+
+    }
+
+    void test() {
+        System.out.println("   а б в г д е ж з и к");
         for (int i = 0; i < Field.COUNT; i++) {
+            if (i == 9) {
+                System.out.print((i + 1) + " ");
+            } else {
+                System.out.print((i + 1) + "  ");
+            }
             for (int j = 0; j < Field.COUNT; j++) {
                 if (field.cells[i][j].getShip() != null) {
-                    System.out.print(1 + " ");
+                    if (!field.cells[i][j].getStatus()) {
+                        System.out.print("х" + " ");
+                    } else
+                        System.out.print("|" + " ");
                 } else {
-                    System.out.print(0 + " ");
+                    if (field.cells[i][j].getStatus()) {
+                        System.out.print(0 + " ");
+                    } else {
+                        System.out.print("*" + " ");
+                    }
                 }
             }
             System.out.println();
         }
     }
-
     void input() throws IOException {
-        System.out.println("Стреляй!");
+        test();
+        output("Стреляй!");
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         String input = reader.readLine();
         if (checkInput(input.toLowerCase())) {
-            field.cells[getInt(input.substring(1)) - 1][getInt(input.charAt(0))].getColumn(); //обращение к введенной пользователем клетке
+            shot(field.cells[getInt(input.substring(1)) - 1][getInt(input.charAt(0))]); //обращение к введенной пользователем клетке
         } else {
             output("Ошибка при вводе. Формат ввода: а1");
             input();
@@ -59,7 +76,11 @@ class Game {
     }
 
     int getInt(char c) {// возвращает число
-        return (int) c - 1072;
+        if ((int) c < 1081) {//буква й
+            return (int) c - 1072;
+        } else {
+            return (int) c - 1073;
+        }
     }
 
     Boolean checkInput(String s) {// формат а1 б2 а10
@@ -67,7 +88,8 @@ class Game {
             if ((int) s.charAt(0) > 1071 && (int) s.charAt(0) < 1083) { //проверка на буквы а-к
                 try {
                     int i = Integer.parseInt(s.substring(1));//проверка на число
-                    return true;
+
+                    return i <= 10;
                 } catch (NumberFormatException e) {
                     return false;
                 }
@@ -76,9 +98,34 @@ class Game {
         return false;
     }
 
-    String shot() {
+    void shot(Cell cell) {
+        if (cell.getStatus() == Cell.SHOT) {
+            output("Вы уже стреляли туда!");
+        } else {
+            cell.setStatus(Cell.SHOT);
+            if (cell.getShip() == null) {
+                output("Мимо");
+            } else {
+                cell.getShip().popadanie();
+                if (cell.getShip().checkStatus()) {
+                    output("Попал!");
+                } else {
+                    output("Убил");
+                    shipCount--;
+                }
+            }
+            numOfShots++;
+        }
+        if (shipCount == 0) {
+            output("Победа!");
+        } else {
+            try {
+                input();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
 
-        numOfShots++;
-        return null;
     }
+
 }
