@@ -21,14 +21,14 @@ class Field {
         fillWithShips();
     }
 
-    public static int[] swap(int[] array, int index1, int index2) {
+    public static int[] swap(int[] array, int index1, int index2) {//метод смены элементов в массиве
         int tmp = array[index1];
         array[index1] = array[index2];
         array[index2] = tmp;
         return array;
     }
 
-    void fillWithShips() {
+    void fillWithShips() {//создание кораблей на поле
         int counter = 0;
         for (int i = 0; i < shipsTypes.length; i++) {// перебираем типы
             for (int j = 0; j < shipsTypes[i]; j++) {
@@ -39,15 +39,33 @@ class Field {
         }
     }
 
+    boolean checkCell(Ship ship, int row, int col) {// проверка на подходящую клетку
+        try {
+            return cells[row][col].getShip() == null || cells[row][col].getShip() == ship;
+        } catch (Exception e) {
+            return true;
+        }
+    }
+
+    boolean checkAdjustCells(Ship ship, int row, int col) {//проверка соседних клеток на корабли
+        for (int i = -1; i < 2; i++) {
+            for (int j = -1; j < 2; j++) {
+                if (!checkCell(ship, row + i, col + j)) {
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
+
     void putShip(Ship ship) {
 
         int startCellRow = rnd.nextInt(COUNT);// получаем параметрын начальной клетки
         int startCellColumn = rnd.nextInt(COUNT);
-        if (cells[startCellRow][startCellColumn].getShip() == null) {
-            Boolean dir;
-            //  Cell coordinates[] = ship.getCoordinates(); //массив клеток корабля
-            dir = getDirection(startCellRow - 1, startCellColumn - 1, ship.getLength(), ship); //в какую сторону будем корабль от начальной клетки ставить
-            if (!dir) {//если хоть 1 направление подошло
+        if (checkCell(ship, startCellRow, startCellColumn)) {
+
+            //в какую сторону будем корабль от начальной клетки ставить
+            if (!getDirection(startCellRow - 1, startCellColumn - 1, ship.getLength(), ship)) {//если хоть 1 направление подошло//иначе корабль поставлен
                 putShip(ship);
             }
 
@@ -73,8 +91,8 @@ class Field {
     }
 
     Boolean checkAndSetDir(int row, int col, int length, int d, Ship ship) {
-        int incRow = 0;//i строка
-        int incCol = 0;//j столбец
+        int incRow = 0;//строка изменение
+        int incCol = 0;//столбец изменение
         switch (d) {
             case 0: //влево
                 incCol = -1;
@@ -89,15 +107,18 @@ class Field {
                 incRow = 1;//вниз
         }
 
-        for (int i = 0; i < length; i++) {
+        for (int i = 0; i < length; i++) {//проверка на добавление корабля
             try {
-                cells[row + i * incRow][col + i * incCol].getColumn();
+                cells[row + i * incRow][col + i * incCol].getColumn(); //проверка на край
+                if (!checkAdjustCells(ship, row + i * incRow, col + i * incCol)) {  //проверка соседних на корабли
+                    return false;
+                }
             } catch (Exception e) {
                 return false;
             }
         }
         Cell[] coordinates = ship.getCoordinates();
-        for (int i = 0; i < length; i++) {
+        for (int i = 0; i < length; i++) {// создание корабля
             cells[row + i * incRow][col + i * incCol].setShip(ship);
             coordinates[i] = cells[row + i * incRow][col + i * incCol];
         }
