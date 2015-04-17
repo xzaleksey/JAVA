@@ -63,10 +63,9 @@ class Field {
         int startCellRow = rnd.nextInt(COUNT);// получаем параметрын начальной клетки
         int startCellColumn = rnd.nextInt(COUNT);
         if (checkCell(ship, startCellRow, startCellColumn)) {
-            Boolean dir;
-            //  Cell coordinates[] = ship.getCoordinates(); //массив клеток корабля
-            dir = getDirection(startCellRow - 1, startCellColumn - 1, ship.getLength(), ship); //в какую сторону будем корабль от начальной клетки ставить
-            if (!dir) {//если хоть 1 направление подошло
+
+            //в какую сторону будем корабль от начальной клетки ставить
+            if (!getDirection(startCellRow - 1, startCellColumn - 1, ship.getLength(), ship)) {//если хоть 1 направление подошло//иначе корабль поставлен
                 putShip(ship);
             }
 
@@ -92,8 +91,8 @@ class Field {
     }
 
     Boolean checkAndSetDir(int row, int col, int length, int d, Ship ship) {
-        int incRow = 0;//i строка
-        int incCol = 0;//j столбец
+        int incRow = 0;//строка изменение
+        int incCol = 0;//столбец изменение
         switch (d) {
             case 0: //влево
                 incCol = -1;
