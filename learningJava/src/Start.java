@@ -8,10 +8,21 @@ public class Start {
 
 
     public static void main(String[] args) {
-
-        for (int i = 1072; i < 1092; i++) {
-            System.out.println((char) i + " " + i);
+        try {
+            return;
+        } finally {
+            System.out.println(System.getProperty("street"));
         }
+//
+//label1:
+//        for (int i = 1072; i < 1092; i++) {
+//            System.out.println((char) i + " " + i);
+//            for (int j = 0; j <1 ; j++) {
+//       continue label1;
+//            }
+//        }
+
+
     }
 
     public static void start(String className) {
