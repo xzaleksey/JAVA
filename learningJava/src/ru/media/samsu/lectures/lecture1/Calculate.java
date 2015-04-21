@@ -1,9 +1,7 @@
 package ru.media.samsu.lectures.lecture1;
 
 
-import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStreamReader;
 
 public class Calculate {
     public static int getSumNumbers(int[] ints) {
@@ -154,8 +152,13 @@ public class Calculate {
     }
 
     public static void main(String[] args) throws IOException {
-        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
-        String[] input = bufferedReader.readLine().split(" ");
+        /*BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
+        String[] input = bufferedReader.readLine().split(" ");*/
+        String s = "";
+        for (String arg : args) {
+            s += arg + " ";
+        }
+        String[] input = s.trim().split(" ");
         String type = Calculate.checkType(input);
 
 
