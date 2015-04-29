@@ -1,3 +1,5 @@
+import java.util.*;
+
 /**
  * @author Алексей Валякин
  * @version 1.0
@@ -25,15 +27,25 @@ enum Weekday {
     }
 }
 
-public class Start {
+public class Test {
 
     public static void main(String[] args) {
-        double d = Double.parseDouble("1");
-        Weekday[] weekdays = Weekday.values();
-        for (Weekday weekday : weekdays) {
-            System.out.println(weekday);
-            weekday.die();
-        }
+        Collection<String> stringCollection;
+        List<String> strings = new ArrayList<>();
+        Map<Integer, String> map = new HashMap<>();
+        map.put(1, "s");
+        System.out.println(map.get(1));
+        stringCollection = strings;
+        List list = new ArrayList<Date>();
+        List<Date> dl = list;
+        dl.add(new Date(System.currentTimeMillis()));
+        System.out.println(list.get(0));
+//        double d = Double.parseDouble("1");
+//        Weekday[] weekdays = Weekday.values();
+//        for (Weekday weekday : weekdays) {
+//            System.out.println(weekday);
+//            weekday.die();
+//        }
 
 //        try {
 //            Integer i = 4;
@@ -53,8 +65,6 @@ public class Start {
 //       continue label1;
 //            }
 //        }
-
-
     }
 
     public static void start(String className) {
