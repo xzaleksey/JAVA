@@ -13,10 +13,11 @@ public class ArrayInverse {
     }
 
     static int[] arrayInverse(int ints[]) {
-        for (int i = 0; i < ints.length / 2; i++) {
+        int len = ints.length;
+        for (int i = 0; i < len / 2; i++) {
             int temp = ints[i];
-            ints[i] = ints[ints.length - 1 - i];
-            ints[ints.length - 1 - i] = temp;
+            ints[i] = ints[len - 1 - i];
+            ints[len - 1 - i] = temp;
 
         }
         return ints;
