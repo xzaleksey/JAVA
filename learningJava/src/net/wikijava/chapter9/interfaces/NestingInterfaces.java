@@ -81,6 +81,8 @@ class A {
 public class NestingInterfaces {
     public static void main(String[] args) {
         A a = new A();
+        A.DImp2 di2 = (A.DImp2) a.getD();
+
         // Нет доступа к A.D:
         //! A.D ad = a.getD();
         // He возвращает ничего, кроме A.D:

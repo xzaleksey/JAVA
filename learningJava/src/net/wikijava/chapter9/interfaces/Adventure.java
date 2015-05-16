@@ -54,6 +54,7 @@ public class Adventure {
     }
 
     public static void main(String[] args) {
+
         Hero h = new Hero();
         t(h); // Используем объект в качестве типа CanFight
         u(h); // Используем объект в качестве типа CanSwim

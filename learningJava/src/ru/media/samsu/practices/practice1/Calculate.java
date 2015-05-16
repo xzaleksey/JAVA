@@ -1,4 +1,4 @@
-package ru.media.samsu.lectures.lecture1;
+package ru.media.samsu.practices.practice1;
 
 
 import java.io.IOException;
