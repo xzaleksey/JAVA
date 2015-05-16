@@ -7,6 +7,7 @@ import java.io.InputStreamReader;
 class Game {
     Field field = new Field();
     private int numOfShots = 0;
+    private int numOfSuccesses = 0;
     private int shipCount = Field.COUNT;
     Game() {
         int counter = 1;
@@ -107,6 +108,7 @@ class Game {
                 output("Мимо");
             } else {
                 cell.getShip().popadanie();
+                numOfSuccesses++;
                 if (cell.getShip().checkStatus()) {
                     output("Попал!");
                 } else {
@@ -118,6 +120,8 @@ class Game {
         }
         if (shipCount == 0) {
             output("Победа!");
+            output("Вы сделали " + numOfShots + " выстрелов!");
+            output("Вы сделали " + numOfSuccesses + " успешных выстрелов!");
         } else {
             try {
                 input();
