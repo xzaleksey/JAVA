@@ -25,10 +25,17 @@ enum Weekday {
     }
 }
 
+interface A1 {
+
+}
+
+interface B1 extends A1 {
+
+}
+
 public class Test {
-
-    public static void main(String[] args) {
-
+    public static void main(String[] args) throws InstantiationException, IllegalAccessException {
+        System.out.println(Math.cos(90));
 
 //        Collection<String> stringCollection;
 //        List<String> strings = new ArrayList<>();

@@ -13,6 +13,7 @@ public class HelloJava4 {
         frame.add(new HelloComponent4("Hello Java4"));
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(300, 300);
+        frame.getContentPane().setBackground(Color.blue);
         frame.setVisible(true);
     }
 }
@@ -31,6 +32,7 @@ class HelloComponent4 extends JComponent
         theMessage = message;
         theButton = new JButton("Change color");
         setLayout(new FlowLayout());
+
         add(theButton);
         theButton.addActionListener(this);
         addMouseMotionListener(this);

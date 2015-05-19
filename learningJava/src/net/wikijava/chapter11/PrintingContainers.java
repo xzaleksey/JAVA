@@ -1,8 +1,9 @@
 package net.wikijava.chapter11;
 
 
-import java.util.Collection;
-import java.util.Map;
+import java.util.*;
+
+import static net.valyakin.util.Print.print;
 
 public class PrintingContainers {
     static Collection fill(Collection<String> collection) {
@@ -22,15 +23,13 @@ public class PrintingContainers {
     }
 
     public static void main(String[] args) {
-//        print(fill(new ArrayList<String>()));
-//        print(fill(new LinkedList<String>()));
-//        print(fill(new HashSet<String>()));
-//        print(fill(new TreeSet<String>()));
-//        print(fill(new LinkedHashSet<String>()));
-//        print(fill(new HashMap<String,String>()));
-//        print(fill(new TreeMap<String,String>()));
-//        print(fill(new LinkedHashMap<String,String>()));
-
-
+        print(fill(new TreeMap<String, String>()));
+        print(fill(new LinkedList<String>()));
+        print(fill(new ArrayList<String>()));
+        print(fill(new HashSet<String>()));
+        print(fill(new TreeSet<String>()));
+        print(fill(new LinkedHashSet<String>()));
+        print(fill(new HashMap<String, String>()));
+        print(fill(new LinkedHashMap<String, String>()));
     }
 }

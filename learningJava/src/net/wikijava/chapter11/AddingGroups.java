@@ -10,6 +10,7 @@ public class AddingGroups {
         Collections.addAll(collection, 11, 12, 13, 14, 15);
         List<Integer> list = Arrays.asList(16, 17, 18, 19, 20);//фиксирует размерность массива
         list.set(1, 99);
+        System.out.println(list.get(1));
         //list.add(21); вызовет ошибку
     }
 }
