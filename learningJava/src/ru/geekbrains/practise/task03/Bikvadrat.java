@@ -1,6 +1,8 @@
 package ru.geekbrains.practise.task03;
 
 public class Bikvadrat {
+    static double roots[] = new double[0];
+
     public static void main(String[] args) {
         int a = 2, b = 2, c = 0;
         solution(a, b, c);
@@ -8,7 +10,7 @@ public class Bikvadrat {
 
     static void solution(int a, int b, int c) {
         String result = "Уравнение биквадратное.";
-        double roots[] = new double[0];
+
         if (a == 0) {//квадратное уравнение
             if (b == 0) {
                 result = "Уравнения нет.";
@@ -16,13 +18,13 @@ public class Bikvadrat {
                 result = "Уравнение квадратное.";
             } else {
                 roots = initRoots(2);
-                roots = setRoots(roots, 0, -c / b);
+                setRoots(0, -c / b);
             }
         } else if (b == 0) {// ax^4 +c
             if (!(a > 0 && c > 0) || (a < 0 && c < 0)) {
                 roots = initRoots(2);
-                roots[0] = (Math.pow((-c / a), 0.25));
-                roots[1] = -roots[0];
+                setRoots(0, (-c / a), 0.25);
+
             }
         } else {//a <>0 b<>0 ax^4 + bx^2 +c
 
@@ -41,17 +43,14 @@ public class Bikvadrat {
                 roots = initRoots(counter);
                 if (counter == 4) {
                     for (int i = 0; i < roots.length; i = i + 2) {
-                        roots[i] = Math.sqrt(d1);
-                        roots[i + 1] = -roots[i];
+                        setRoots(i, d1);
                         d1 = d2;
                     }
 
                 } else if (first) {
-                    roots[0] = Math.sqrt(d1);
-                    roots[1] = -roots[0];
+                    setRoots(0, d1);
                 } else {
-                    roots[0] = Math.sqrt(d2);
-                    roots[1] = -roots[0];
+                    setRoots(0, d2);
                 }
             }
         }
@@ -59,16 +58,13 @@ public class Bikvadrat {
         output(roots);
     }
 
-    static double[] setRoots(double[] roots, int start, double value) {
-        roots[start] = Math.sqrt(value);
-        roots[start + 1] = -roots[start];
-        return roots;
+    static double[] setRoots(int start, double value) {
+        return setRoots(start, value, 0.5);
     }
 
-    static double[] setRoots(double[] roots, int start, double value, int pow) {
-        for (int i = 0; i < pow; i++) {
-            roots = setRoots(roots, 0, value);
-        }
+    static double[] setRoots(int start, double value, double pow) {
+        roots[start] = Math.pow(value, pow);
+        roots[start + 1] = -roots[start];
         return roots;
     }
 

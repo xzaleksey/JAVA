@@ -1,3 +1,7 @@
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 /**
  * @author Алексей Валякин
  * @version 1.0
@@ -35,8 +39,11 @@ interface B1 extends A1 {
 
 public class Test {
     public static void main(String[] args) throws InstantiationException, IllegalAccessException {
-        System.out.println(Math.cos(90));
+        DateFormat dateFormat = new SimpleDateFormat("HHmm");
+        Date date = new Date();
 
+        System.out.println(dateFormat.format(date));
+        System.out.println("11:00 до 13:00".substring(0, 2));
 //        Collection<String> stringCollection;
 //        List<String> strings = new ArrayList<>();
 //        Map<Integer, String> map = new HashMap<>();
