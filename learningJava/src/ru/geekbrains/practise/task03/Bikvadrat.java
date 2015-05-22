@@ -4,7 +4,7 @@ public class Bikvadrat {
     static double roots[] = new double[0];
 
     public static void main(String[] args) {
-        int a = 2, b = 2, c = 0;
+        int a = 2, b = 2, c = -5;
         solution(a, b, c);
     }
 

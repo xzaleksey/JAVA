@@ -44,16 +44,19 @@ public class Dialog4 extends JFrame {
         //
         jPanelbtn.add(btn, BorderLayout.SOUTH);
         fldIn.addActionListener(new ActionListener() {
+            @Override
             public void actionPerformed(ActionEvent e) {
                 fldOut.setText("Введен текст:" + fldIn.getText());
             }
         });
         btn.addActionListener(new ActionListener() {
+            @Override
             public void actionPerformed(ActionEvent e) {
                 fldOut.setText("Нажата кнопка");
             }
         });
         WindowListener wndCloser = new WindowAdapter() {
+            @Override
             public void windowClosing(WindowEvent e) {
                 System.exit(0);
             }
