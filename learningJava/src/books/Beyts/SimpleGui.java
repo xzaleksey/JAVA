@@ -1,4 +1,4 @@
-package books.oreilly.chapter2;
+package books.Beyts;
 
 import javax.swing.*;
 import java.awt.*;
