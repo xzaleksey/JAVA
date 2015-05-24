@@ -35,6 +35,7 @@ interface B1 extends A1 {
 
 public class Test {
     public static void main(String[] args) throws InstantiationException, IllegalAccessException {
+
         int x = 5;
         System.out.println(Integer.toBinaryString(0));
         System.out.println(Integer.toBinaryString(-0));
