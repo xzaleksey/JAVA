@@ -1,0 +1,79 @@
+package ru.geekbrains.practise.task06;
+
+import java.util.Map;
+import java.util.TreeMap;
+
+public class Multiply {
+    static final int NUMBER = 1000;
+
+    public static void main(String[] args) {
+        String a = "123456789", b = "987654321";
+        multiply(a, b);
+    }
+
+    static void multiply(String a, String b) {
+        String result = "";
+        int counterA = 0;
+        TreeMap<Integer, Integer> treeMap = new TreeMap<>();//kluch - eto stepen 1000
+        while (a.length() > 0) {//chislo kotoroe umnojaem
+            int counterB = 0;
+            String lastA = cut(a, false);
+            a = cut(a, true);
+            String tempB = b;//chislo na kotoroe umnojaem
+            while (tempB.length() > 0) {
+                String lastB = cut(tempB, false);
+                tempB = cut(tempB, true);
+                int temp = mult(lastA, lastB);
+                int dif = 0;
+                if (String.valueOf(temp).length() > 3) {
+                    dif = temp / NUMBER;
+                    treeMap = checkAndPut(treeMap, counterB + counterA + 1, dif);
+                }
+                treeMap = checkAndPut(treeMap, counterB + counterA, temp - dif * NUMBER);
+                counterB++;
+            }
+            counterA++;
+        }
+        for (Map.Entry e : treeMap.entrySet()) {
+            result = e.getValue() + result;
+        }
+        System.out.println(result);
+    }
+
+    static TreeMap<Integer, Integer> checkAndPut(TreeMap<Integer, Integer> treeMap, int key, int value) {
+        if (treeMap.containsKey(key)) {
+            int temp = treeMap.get(key) + value;
+            treeMap = sdvig(treeMap, key, temp);
+        } else {
+            treeMap.put(key, value);
+        }
+        return treeMap;
+    }
+
+    static TreeMap<Integer, Integer> sdvig(TreeMap<Integer, Integer> treeMap, int key, int value) {
+        if (value > 999) {
+            int temp = value / NUMBER;
+            treeMap.put(key, value - temp * NUMBER);
+            if (treeMap.containsKey(key + 1)) {
+                sdvig(treeMap, key + 1, temp + treeMap.get(key + 1));
+            } else {
+                sdvig(treeMap, key + 1, temp);
+            }
+        } else {
+            treeMap.put(key, value);
+        }
+        return treeMap;
+    }
+
+    static int mult(String a, String b) {
+        return Integer.parseInt(a) * Integer.parseInt(b);
+    }
+
+    static String cut(String s, boolean fullString) {
+        if (s.length() >= 3) {
+            return fullString ? s.substring(0, s.length() - 3) : s.substring(s.length() - 3, s.length());
+        } else {
+            return fullString ? "" : s;
+        }
+    }
+}
