@@ -1,4 +1,4 @@
-package books.Beyts;
+package books.Beyts.gui;
 
 import javax.swing.*;
 import java.awt.*;
