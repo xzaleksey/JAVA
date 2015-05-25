@@ -17,7 +17,7 @@ public class Multiply {
         TreeMap<Integer, Integer> treeMap = new TreeMap<>();//kluch - eto stepen 1000
         while (a.length() > 0) {//chislo kotoroe umnojaem
             int counterB = 0;
-            String lastA = cut(a, false);
+            String lastA = cut(a, false); //obrezaem po 3
             a = cut(a, true);
             String tempB = b;//chislo na kotoroe umnojaem
             while (tempB.length() > 0) {
@@ -25,7 +25,7 @@ public class Multiply {
                 tempB = cut(tempB, true);
                 int temp = mult(lastA, lastB);
                 int dif = 0;
-                if (String.valueOf(temp).length() > 3) {
+                if (temp > 999) { //esli bolshe nuzhen perenos
                     dif = temp / NUMBER;
                     treeMap = checkAndPut(treeMap, counterB + counterA + 1, dif);
                 }
