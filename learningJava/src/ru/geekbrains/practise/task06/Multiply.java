@@ -6,8 +6,9 @@ import java.util.TreeMap;
 public class Multiply {
     static final int NUMBER = 1000;
 
+    // todo ������� �����������, ���������
     public static void main(String[] args) {
-        String a = "123456789", b = "987654321";
+        String a = "999", b = "9999";
         multiply(a, b);
     }
 
@@ -34,8 +35,10 @@ public class Multiply {
             }
             counterA++;
         }
+        int treeMapSize = treeMap.size(), counter = 1;
         for (Map.Entry e : treeMap.entrySet()) {
-            result = e.getValue() + result;
+            result = counter != treeMapSize ? String.format("%03d", e.getValue()) + result : e.getValue() + result; //ispravil dobavlenie 00
+            counter++;
         }
         System.out.println(result);
     }

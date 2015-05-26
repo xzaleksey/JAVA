@@ -1,9 +1,11 @@
 package ru.geekbrains.practise.task04;
 
 public class LongNumbers {
+    // todo * исправить ошибку
+    // todo * пусть на консоль выводится только сумма
     public static void main(String[] args) {
-        String a = "923123123123142911", b = "8888888880000059556665455";
-        System.out.println(a.length() + "\n" + b.length());
+        String a = "99999999999", b = "99999999999999";
+        // System.out.println(a.length() + "\n" + b.length());
         sum2(a, b);//не оптимальный
         sum(a, b);//получше
     }
@@ -22,19 +24,14 @@ public class LongNumbers {
         for (int i = a.length() - 1; i >= 0; i--) {
             if (dif - i <= 0) {//складываем 2 числа
                 temp = Integer.parseInt(a.substring(i, i + 1)) + Integer.parseInt(b.substring(-dif + i, -dif + i + 1)) + b1;// с конца считаем
-                if (!(temp < 10)) {
-                    temp -= 10;
-                    b1 = 1;
-                } else b1 = 0;
-
             } else { //если минимальное число все прошло
-                if (b1 == 0) {
-                    temp = Integer.parseInt(a.substring(i, i + 1));
-                } else {
                     temp = Integer.parseInt(a.substring(i, i + 1)) + b1;
-                    b1 = 0;
-                }
             }
+
+            if (temp > 9 && i > 0) {
+                temp -= 10;
+                b1 = 1;
+            } else b1 = 0;
             result = temp + result;
         }
 
@@ -72,7 +69,8 @@ public class LongNumbers {
                 }
             }
         } else {
-            System.out.println(Long.parseLong(a) + Long.parseLong(b));
+            long l = Long.parseLong(a) + Long.parseLong(b);
+            System.out.println(Long.valueOf(l).toString());
         }
         System.out.println(result);
     }
