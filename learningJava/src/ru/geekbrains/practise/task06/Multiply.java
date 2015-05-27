@@ -5,8 +5,6 @@ import java.util.TreeMap;
 
 public class Multiply {
     static final int NUMBER = 1000;
-
-    // todo ������� �����������, ���������
     public static void main(String[] args) {
         String a = "999", b = "9999";
         multiply(a, b);

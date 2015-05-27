@@ -50,7 +50,7 @@ public class Test {
 //        System.out.println("11:00 до 13:00".substring(0, 2));
 //        Collection<String> stringCollection;
 //        List<String> strings = new ArrayList<>();
-//        Map<Integer, String> map = new HashMap<>();
+//        map<Integer, String> map = new HashMap<>();
 //        map.put(1, "s");
 //        System.out.println(map.get(1));
 //        stringCollection = strings;

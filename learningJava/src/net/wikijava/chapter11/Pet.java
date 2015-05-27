@@ -15,12 +15,6 @@ public class Pet extends Individual {
     }
 }
 
-class Person extends Individual {
-    public Person(String name) {
-        super(name);
-    }
-}
-
 //typeinfo/pets/Dog.java
 class Dog extends Pet {
     public Dog(String name) {
