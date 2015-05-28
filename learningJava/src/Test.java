@@ -35,13 +35,19 @@ interface B1 extends A1 {
 
 public class Test {
     public static void main(String[] args) throws InstantiationException, IllegalAccessException {
+        int n = 5;
+        for (int i = 1; i <= n / 3; i++) {
+            for (int j = i; j <= (n - i) / 2; j++) {
+                System.out.println("Числа " + i + " + " + j + " + " + (n - i - j));
+            }
+        }
 
-        int x = 5;
-        System.out.println(Integer.toBinaryString(0));
-        System.out.println(Integer.toBinaryString(-0));
-        int a = 5;
-        a = ((~(a)) | 1 >> 31) + 1;
-        System.out.println(a);
+//        int x = 5;
+//        System.out.println(Integer.toBinaryString(0));
+//        System.out.println(Integer.toBinaryString(-0));
+//        int a = 5;
+//        a = ((~(a)) | 1 >> 31) + 1;
+//        System.out.println(a);
 //
 //  DateFormat dateFormat = new SimpleDateFormat("HHmm");
 //        Date date = new Date();

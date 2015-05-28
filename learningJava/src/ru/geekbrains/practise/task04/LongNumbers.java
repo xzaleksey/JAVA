@@ -4,10 +4,10 @@ public class LongNumbers {
     // todo * исправить ошибку
     // todo * пусть на консоль выводится только сумма
     public static void main(String[] args) {
-        String a = "99999999999", b = "99999999999999";
+        String a = "81", b = "8";
         // System.out.println(a.length() + "\n" + b.length());
-        sum2(a, b);//не оптимальный
-        sum(a, b);//получше
+        System.out.println(sum2(a, b));//не оптимальный
+        //  sum(a, b);//получше
     }
 
     static void sum(String a, String b) {
@@ -38,7 +38,7 @@ public class LongNumbers {
         System.out.println(result);
     }
 
-    static void sum2(String a, String b) {
+    public static String sum2(String a, String b) {
         String result = "";
         if ((a.length() < b.length())) {// делаем максимальное число a
             result = b;
@@ -69,10 +69,10 @@ public class LongNumbers {
                 }
             }
         } else {
-            long l = Long.parseLong(a) + Long.parseLong(b);
-            System.out.println(Long.valueOf(l).toString());
+            result = (Long.parseLong(a) + Long.parseLong(b)) + "";
+            //System.out.println(Long.valueOf(l).toString());
         }
-        System.out.println(result);
+        return (result);
     }
 
     static long getLong(String s) {
