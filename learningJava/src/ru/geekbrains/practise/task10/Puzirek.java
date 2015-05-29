@@ -1,4 +1,4 @@
-package ru.geekbrains.practise.sort;
+package ru.geekbrains.practise.task10;
 
 import java.util.Arrays;
 
