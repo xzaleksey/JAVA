@@ -1,3 +1,5 @@
+import java.util.*;
+
 /**
  * @author Алексей Валякин
  * @version 1.0
@@ -35,12 +37,23 @@ interface B1 extends A1 {
 
 public class Test {
     public static void main(String[] args) throws InstantiationException, IllegalAccessException {
-        int n = 5;
-        for (int i = 1; i <= n / 3; i++) {
-            for (int j = i; j <= (n - i) / 2; j++) {
-                System.out.println("Числа " + i + " + " + j + " + " + (n - i - j));
+        Map<Integer, Integer> map = new HashMap<>();
+        map.put(1, 1);
+        map.put(3, 0);
+        List list = new ArrayList(map.entrySet());
+        Collections.sort(list, new Comparator<Map.Entry<Integer, Integer>>() {
+            @Override
+            public int compare(Map.Entry<Integer, Integer> a, Map.Entry<Integer, Integer> b) {
+                return a.getValue() - b.getValue();
             }
-        }
+        });
+        System.out.println(list);
+//        int n = 5;
+//        for (int i = 1; i <= n / 3; i++) {
+//            for (int j = i; j <= (n - i) / 2; j++) {
+//                System.out.println("Числа " + i + " + " + j + " + " + (n - i - j));
+//            }
+//        }
 
 //        int x = 5;
 //        System.out.println(Integer.toBinaryString(0));
