@@ -1,5 +1,8 @@
 package net.wikijava.chapter11;
 
+import net.wikijava.chapter11.pets.Pet;
+import net.wikijava.chapter11.pets.Pets;
+
 import java.util.List;
 import java.util.ListIterator;
 

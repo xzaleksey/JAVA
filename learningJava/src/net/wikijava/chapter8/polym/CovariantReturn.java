@@ -16,12 +16,23 @@ class Mill {
     Grain process() {
         return new Grain();
     }
+
+    @Override
+    public String toString() {
+        return "Mill{}";
+    }
 }
 
 class WheatMill extends Mill {
     @Override
     Wheat process() {
         return new Wheat();
+
+    }
+
+    @Override
+    public String toString() {
+        return "WheatMill{}";
     }
 }
 
@@ -33,7 +44,6 @@ public class CovariantReturn {
         System.out.println(g.getClass());
         m = new WheatMill();
         g = m.process();
-        System.out.println(g.getClass());
         System.out.println(g);
     }
 }

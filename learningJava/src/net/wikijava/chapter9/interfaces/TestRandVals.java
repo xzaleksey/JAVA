@@ -2,7 +2,7 @@ package net.wikijava.chapter9.interfaces;
 
 import java.util.Random;
 
-import static net.valyakin.util.Print.print;
+import static net.mindview.util.Print.print;
 
 interface RandVals {
     Random RAND = new Random(47);

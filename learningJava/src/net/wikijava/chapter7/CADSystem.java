@@ -1,6 +1,6 @@
 package net.wikijava.chapter7;
 
-import static net.valyakin.util.Print.print;
+import static net.mindview.util.Print.print;
 
 class Shape {
     Shape(int i) {
@@ -18,6 +18,7 @@ class Circle extends Shape {
         print("Drawing Circle");
     }
 
+    @Override
     void dispose() {
         print("Erasing Circle");
         super.dispose();
@@ -30,6 +31,7 @@ class Triangle extends Shape {
         print("Drawing Triangle");
     }
 
+    @Override
     void dispose() {
         print("Erasing Triangle");
         super.dispose();
@@ -46,6 +48,7 @@ class Line extends Shape {
         print("Drawing Line: " + start + ", " + end);
     }
 
+    @Override
     void dispose() {
         print("Erasing Line: " + start + ", " + end);
         super.dispose();
@@ -75,6 +78,7 @@ public class CADSystem extends Shape {
         }
     }
 
+    @Override
     public void dispose() {
         print("CADSystem.dispose()");
         // Завершение осуществляется в порядке,

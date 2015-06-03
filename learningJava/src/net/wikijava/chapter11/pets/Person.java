@@ -1,4 +1,4 @@
-package net.wikijava.chapter11;
+package net.wikijava.chapter11.pets;
 
 public class Person extends Individual {
     public Person(String name) {

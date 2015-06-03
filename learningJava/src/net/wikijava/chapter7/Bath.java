@@ -6,7 +6,7 @@ package net.wikijava.chapter7;
 
 import java.util.logging.Logger;
 
-import static net.valyakin.util.Print.print;
+import static net.mindview.util.Print.print;
 
 class Soap {
     private String s;

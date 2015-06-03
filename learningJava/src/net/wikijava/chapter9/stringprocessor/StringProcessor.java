@@ -2,7 +2,7 @@ package net.wikijava.chapter9.stringprocessor;
 
 import java.util.Arrays;
 
-import static net.valyakin.util.Print.print;
+import static net.mindview.util.Print.print;
 
 interface Processor {
     String name();

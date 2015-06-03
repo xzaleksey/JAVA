@@ -5,7 +5,7 @@ package net.wikijava.chapter7;
 
 import java.util.Random;
 
-import static net.valyakin.util.Print.print;
+import static net.mindview.util.Print.print;
 
 
 class Value {

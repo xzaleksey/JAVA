@@ -4,7 +4,7 @@ import java.util.Collections;
 import java.util.HashSet;
 import java.util.Set;
 
-import static net.valyakin.util.Print.print;
+import static net.mindview.util.Print.print;
 
 public class SetOperations {
     public static void main(String[] args) {

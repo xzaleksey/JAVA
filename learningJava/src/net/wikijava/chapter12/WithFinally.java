@@ -1,6 +1,6 @@
 package net.wikijava.chapter12;
 
-import static net.valyakin.util.Print.print;
+import static net.mindview.util.Print.print;
 
 class Switch {
     private boolean state = false;

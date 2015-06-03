@@ -1,7 +1,7 @@
 package net.wikijava.chapter10.extending;
 
-import static net.valyakin.util.Print.print;
-import static net.valyakin.util.Print.printnb;
+import static net.mindview.util.Print.print;
+import static net.mindview.util.Print.printnb;
 
 interface Counter {
     int next();

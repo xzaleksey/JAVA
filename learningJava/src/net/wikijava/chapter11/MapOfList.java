@@ -1,11 +1,13 @@
 package net.wikijava.chapter11;
 
+import net.wikijava.chapter11.pets.*;
+
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import static net.valyakin.util.Print.print;
+import static net.mindview.util.Print.print;
 
 public class MapOfList {
     public static Map<Person, List<? extends Pet>>

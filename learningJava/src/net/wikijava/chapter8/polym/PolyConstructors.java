@@ -1,7 +1,7 @@
 package net.wikijava.chapter8.polym;
 
 
-import static net.valyakin.util.Print.print;
+import static net.mindview.util.Print.print;
 
 class Glyph {
     Glyph() {

@@ -3,7 +3,7 @@ package net.wikijava.chapter11;
 
 import java.util.*;
 
-import static net.valyakin.util.Print.print;
+import static net.mindview.util.Print.print;
 
 public class PrintingContainers {
     static Collection fill(Collection<String> collection) {

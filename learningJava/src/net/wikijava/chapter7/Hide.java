@@ -1,6 +1,6 @@
 package net.wikijava.chapter7;
 
-import static net.valyakin.util.Print.print;
+import static net.mindview.util.Print.print;
 
 class Homer {
     char doh(char c) {
@@ -18,6 +18,7 @@ class Milhouse {
 }
 
 class Bart extends Homer {
+    @Override
     float doh(float f) {
         print("doh(float)");
         return 2.0f;

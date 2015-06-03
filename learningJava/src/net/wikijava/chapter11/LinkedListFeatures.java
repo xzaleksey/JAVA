@@ -1,8 +1,13 @@
 package net.wikijava.chapter11;
 
+import net.wikijava.chapter11.pets.Hamster;
+import net.wikijava.chapter11.pets.Pet;
+import net.wikijava.chapter11.pets.Pets;
+import net.wikijava.chapter11.pets.Rat;
+
 import java.util.LinkedList;
 
-import static net.valyakin.util.Print.print;
+import static net.mindview.util.Print.print;
 
 public class LinkedListFeatures {
     public static void main(String[] args) {

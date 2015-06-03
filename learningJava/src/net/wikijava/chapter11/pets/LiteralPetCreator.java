@@ -1,4 +1,4 @@
-package net.wikijava.chapter11;
+package net.wikijava.chapter11.pets;
 
 import java.util.Arrays;
 import java.util.Collections;

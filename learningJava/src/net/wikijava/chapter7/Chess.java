@@ -1,6 +1,6 @@
 package net.wikijava.chapter7;
 
-import static net.valyakin.util.Print.print;
+import static net.mindview.util.Print.print;
 
 class Game {
     Game(int i) {

@@ -1,6 +1,6 @@
 package net.wikijava.chapter11.iterable;
 
-import net.wikijava.chapter11.IterableClass;
+import net.wikijava.chapter11.pets.IterableClass;
 
 import java.util.*;
 

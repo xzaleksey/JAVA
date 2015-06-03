@@ -1,6 +1,6 @@
 package net.wikijava.chapter10;
 
-import static net.valyakin.util.Print.print;
+import static net.mindview.util.Print.print;
 
 interface Service {
     void method1();

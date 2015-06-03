@@ -1,7 +1,7 @@
 package net.wikijava.chapter10.extending;
 
 
-import static net.valyakin.util.Print.print;
+import static net.mindview.util.Print.print;
 
 class Egg {
     private Yolk y;

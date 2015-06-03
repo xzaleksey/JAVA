@@ -1,6 +1,6 @@
 package net.wikijava.chapter6;
 
-import static net.valyakin.util.Print.print;
+import static net.mindview.util.Print.print;
 
 /**
  * Created by ruaval on 13.04.2015.

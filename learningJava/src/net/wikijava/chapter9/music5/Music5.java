@@ -2,7 +2,7 @@ package net.wikijava.chapter9.music5;
 
 import net.wikijava.chapter8.music.Note;
 
-import static net.valyakin.util.Print.print;
+import static net.mindview.util.Print.print;
 
 interface Instrument {
     // Константа времени компиляции:

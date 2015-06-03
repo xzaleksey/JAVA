@@ -3,7 +3,7 @@ package net.wikijava.chapter12;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 
-import static net.valyakin.util.Print.print;
+import static net.mindview.util.Print.print;
 
 class WrapCheckedException {
     void throwRuntimeException(int type) {

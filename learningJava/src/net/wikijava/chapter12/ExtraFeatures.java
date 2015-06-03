@@ -1,6 +1,6 @@
 package net.wikijava.chapter12;
 
-import static net.valyakin.util.Print.print;
+import static net.mindview.util.Print.print;
 
 class MyException2 extends Exception {
     private int x;

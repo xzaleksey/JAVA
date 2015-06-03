@@ -2,7 +2,7 @@ package net.wikijava.chapter10;
 //: innerclasses/AnonymousConstructor.java
 // Создание конструктора для безымянного внутреннего класса.
 
-import static net.valyakin.util.Print.print;
+import static net.mindview.util.Print.print;
 
 abstract class Base {
     public Base(int i) {

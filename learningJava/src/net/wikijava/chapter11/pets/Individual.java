@@ -1,4 +1,4 @@
-package net.wikijava.chapter11;
+package net.wikijava.chapter11.pets;
 
 public class Individual implements Comparable<Individual> {
     private static long counter = 0;

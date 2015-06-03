@@ -1,6 +1,6 @@
 package net.wikijava.chapter10.extending;
 
-import static net.valyakin.util.Print.print;
+import static net.mindview.util.Print.print;
 
 //: innerclasses/BigEgg2.java
 // Правильное наследование внутреннего класса,

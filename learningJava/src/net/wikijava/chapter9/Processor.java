@@ -2,7 +2,7 @@ package net.wikijava.chapter9;
 
 import java.util.Arrays;
 
-import static net.valyakin.util.Print.print;
+import static net.mindview.util.Print.print;
 
 class Processor {
     public String name() {

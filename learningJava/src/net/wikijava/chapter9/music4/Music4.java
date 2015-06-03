@@ -2,7 +2,7 @@ package net.wikijava.chapter9.music4;
 
 import net.wikijava.chapter8.music.Note;
 
-import static net.valyakin.util.Print.print;
+import static net.mindview.util.Print.print;
 
 abstract class Instrument {
     private int i; // Память выделяется для каждого объекта

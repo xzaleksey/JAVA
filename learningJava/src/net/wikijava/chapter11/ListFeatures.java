@@ -1,8 +1,10 @@
 package net.wikijava.chapter11;
 
+import net.wikijava.chapter11.pets.*;
+
 import java.util.*;
 
-import static net.valyakin.util.Print.print;
+import static net.mindview.util.Print.print;
 
 public class ListFeatures {
     public static void main(String[] args) {

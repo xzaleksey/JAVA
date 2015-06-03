@@ -4,7 +4,7 @@ package net.wikijava.chapter10;
 // Использование внутренних классов
 // для реализации обратных вызовов
 
-import static net.valyakin.util.Print.print;
+import static net.mindview.util.Print.print;
 
 interface Incrementable {
     void increment();

@@ -1,9 +1,9 @@
-package net.wikijava.chapter11;
+package net.wikijava.chapter11.pets;
 
 import java.util.HashMap;
 import java.util.Map;
 
-import static net.valyakin.util.Print.print;
+import static net.mindview.util.Print.print;
 
 public class PetMap {
     public static void main(String[] args) {
