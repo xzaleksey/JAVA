@@ -53,9 +53,6 @@ public class Multiply {
         return Integer.parseInt(a) * Integer.parseInt(b);
     }
 
-    static int sum(String a, String b) {
-        return Integer.parseInt(a) + Integer.parseInt(b);
-    }
 
     static String cut(String s, boolean fullString) {
         if (s.length() >= 3) {
