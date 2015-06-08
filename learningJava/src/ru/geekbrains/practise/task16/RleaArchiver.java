@@ -6,7 +6,10 @@ public class RleaArchiver {
         archivate(s);
     }
 
-    static void archivate(String s) {
+    public static String archivate(String s) {
+        if (s.length() == 0) {
+            return "";
+        }
         String s1 = "";
         char current = s.charAt(0);
         int counter = 0;
@@ -25,6 +28,6 @@ public class RleaArchiver {
                 s1 += counter;
             }
         }
-        System.out.println(s1);
+        return s1;
     }
 }
