@@ -18,13 +18,11 @@ public class FileComparator {
 
     public static long compareFiles(File f1, File f2) throws IOException {
         if (f1.length() != f2.length()) {
-            System.out.println("Разница длин файлов: " + (f1.length() - f2.length()));
+            // System.out.println("Разница длин файлов: " + (f1.length() - f2.length()));
             return f1.length() - f2.length();
         }
 
         return execute(new BufferedReader(new FileReader(f1.getAbsolutePath())), new BufferedReader(new FileReader(f2.getAbsolutePath())));
-
-
     }
 
     static int execute(final BufferedReader r1, final BufferedReader r2) throws IOException {

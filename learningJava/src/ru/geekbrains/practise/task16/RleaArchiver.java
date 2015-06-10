@@ -3,7 +3,8 @@ package ru.geekbrains.practise.task16;
 public class RleaArchiver {
     public static void main(String[] args) {
         String s = "ТТТТТТТТУУУУУУУТТТТТТТ  ММММННННОООГГООО ПООООООВВВВВТТТТТОООРРООВВ  Т";
-        archivate(s);
+        //Добавлен вывод
+        System.out.println(archivate(s));
     }
 
     public static String archivate(String s) {

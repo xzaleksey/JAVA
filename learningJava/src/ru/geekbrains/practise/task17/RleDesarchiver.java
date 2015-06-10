@@ -3,7 +3,8 @@ package ru.geekbrains.practise.task17;
 public class RleDesarchiver {
     public static void main(String[] args) {
         String s = "Т40111";
-        desarchivate(s);
+        //Добавлен вывод
+        System.out.println(desarchivate(s));
     }
 
 
