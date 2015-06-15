@@ -1,4 +1,6 @@
-import java.util.*;
+import javax.script.ScriptEngine;
+import javax.script.ScriptEngineManager;
+import javax.script.ScriptException;
 
 /**
  * @author Алексей Валякин
@@ -36,18 +38,30 @@ interface B1 extends A1 {
 }
 
 public class Test {
+    static int log(int x, int base) {
+        return (int) (Math.log(x) / Math.log(base));
+    }
     public static void main(String[] args) throws InstantiationException, IllegalAccessException {
-        Map<Integer, Integer> map = new HashMap<>();
-        map.put(1, 1);
-        map.put(3, 0);
-        List list = new ArrayList(map.entrySet());
-        Collections.sort(list, new Comparator<Map.Entry<Integer, Integer>>() {
-            @Override
-            public int compare(Map.Entry<Integer, Integer> a, Map.Entry<Integer, Integer> b) {
-                return a.getValue() - b.getValue();
-            }
-        });
-        System.out.println(list);
+
+        ScriptEngineManager manager = new ScriptEngineManager();
+        ScriptEngine engine = manager.getEngineByName("js");
+        try {
+            Object result = engine.eval("5=0");
+            System.out.println(result);
+        } catch (ScriptException e) {
+            e.printStackTrace();
+        }
+//        Map<Integer, Integer> map = new HashMap<>();
+//        map.put(1, 1);
+//        map.put(3, 0);
+//        List list = new ArrayList(map.entrySet());
+//        Collections.sort(list, new Comparator<Map.Entry<Integer, Integer>>() {
+//            @Override
+//            public int compare(Map.Entry<Integer, Integer> a, Map.Entry<Integer, Integer> b) {
+//                return a.getValue() - b.getValue();
+//            }
+//        });
+//        System.out.println(list);
 //        int n = 5;
 //        for (int i = 1; i <= n / 3; i++) {
 //            for (int j = i; j <= (n - i) / 2; j++) {
