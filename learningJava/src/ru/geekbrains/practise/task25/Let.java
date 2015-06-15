@@ -9,9 +9,9 @@ public class Let extends Operator {
     void execute(Interpreter interpreter) {
         String[] parsed = code.split(" ");
         try {
-            interpreter.vars.put(parsed[0], Double.parseDouble(parsed[2]));
+            interpreter.getVars().put(parsed[0], Double.parseDouble(parsed[2]));
         } catch (Exception e) {
-            interpreter.vars.put(parsed[0], Expression.parse(interpreter, code));
+            interpreter.getVars().put(parsed[0], Expression.parse(interpreter, code));
         }
         interpreter.nextLine();
     }

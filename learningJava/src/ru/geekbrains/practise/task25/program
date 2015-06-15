@@ -10,7 +10,7 @@
 100 LET x2 = (-b - SQRT(d))/2/a
 110 PRINT "x1=";
 120 PRINT x1
-130 PRINT "x2=";"x2="
+130 PRINT "x2=";
 140 PRINT x2
 150 GOTO 170
 160 PRINT "x="; -b/2/a

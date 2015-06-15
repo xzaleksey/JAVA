@@ -18,11 +18,11 @@ public class Print extends Operator {
     @Override
     void execute(Interpreter interpreter) {
         String strings[] = code.split(";");
-        for (int i = 0; i < strings.length; i++) {
-            if (strings[i].charAt(0) == '"' && strings[i].charAt(strings[i].length() - 1) == '"') {
-                System.out.print(strings[i].substring(1, strings[i].length() - 1));
+        for (String string : strings) {
+            if (string.charAt(0) == '"' && string.charAt(string.length() - 1) == '"') {
+                System.out.print(string.substring(1, string.length() - 1));
             } else {
-                System.out.print(replaceWithVars(strings[i], interpreter.vars));
+                System.out.print(replaceWithVars(string, interpreter.getVars()));
             }
         }
         if (code.charAt(code.length() - 1) != ';') {

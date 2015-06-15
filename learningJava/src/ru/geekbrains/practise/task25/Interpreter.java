@@ -9,13 +9,13 @@ import java.util.TreeMap;
 
 public class Interpreter {
     TreeMap<Integer, Operator> code = new TreeMap<>();
-    HashMap<String, Double> vars = new HashMap<>();
+    private HashMap<String, Double> vars = new HashMap<>();
     int curLineNumber = 0;
 
     public static void main(String[] args) {
         Interpreter interpreter = new Interpreter();
         try {
-            interpreter.parse(new FileReader("C:\\git\\JAVA\\learningJava\\src\\ru\\geekbrains\\practise\\task25\\program"));
+            interpreter.parse(new FileReader("D:\\JAVA\\JAVA\\learningJava\\src\\ru\\geekbrains\\practise\\task25\\program"));
             interpreter.nextLine();
 
 //
@@ -38,7 +38,7 @@ public class Interpreter {
 
                 StringBuilder stringBuilder = new StringBuilder();
                 for (int i = 2; i < parsed.length; i++) {
-                    stringBuilder.append(parsed[i] + " ");
+                    stringBuilder.append(parsed[i]).append(" ");
                 }
                 String temp = stringBuilder.toString().trim();
                 code.put(Integer.parseInt(parsed[0]), getOperator(parsed[1], temp.trim()));
@@ -77,10 +77,13 @@ public class Interpreter {
             curLineNumber = num;
             code.get(num).execute(this);
         }
+        else  {
+            System.exit(0);
+        }
     }
 
-    double getVars(String var) {
-        return vars.get(var);
+    HashMap<String, Double> getVars() {
+        return vars;
     }
 
     void nextLine() {
@@ -88,6 +91,6 @@ public class Interpreter {
     }
 
     boolean hasNextLine(int num) {
-        return code.containsKey(num) ? true : false;
+        return code.containsKey(num);
     }
 }
