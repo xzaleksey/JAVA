@@ -30,8 +30,6 @@ public class BinarySearch {
             return binarySearch(arr, value, mid + 1, hi);
         } else {
             return mid;
-
-
         }
 
     }

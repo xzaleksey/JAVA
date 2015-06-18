@@ -1,4 +1,4 @@
-package net.wikijava.chapter14;
+package net.wikijava.chapter14.generic;
 
 import java.util.ArrayList;
 import java.util.List;

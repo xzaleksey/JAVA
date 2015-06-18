@@ -1,4 +1,4 @@
-package net.wikijava.chapter14;
+package net.wikijava.chapter14.generic;
 
 public class GenericMethods {
     public static void main(String[] args) {
