@@ -9,13 +9,13 @@ import java.util.TreeMap;
 
 public class Interpreter {
     TreeMap<Integer, Operator> code = new TreeMap<>();
-    private HashMap<String, Double> vars = new HashMap<>();
     int curLineNumber = 0;
+    private HashMap<String, Double> vars = new HashMap<>();
 
     public static void main(String[] args) {
         Interpreter interpreter = new Interpreter();
         try {
-            interpreter.parse(new FileReader("D:\\JAVA\\JAVA\\learningJava\\src\\ru\\geekbrains\\practise\\task25\\program"));
+            interpreter.parse(new FileReader("C:\\git\\JAVA\\learningJava\\src\\ru\\geekbrains\\practise\\task25\\program"));
             interpreter.nextLine();
 
 //

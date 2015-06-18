@@ -12,7 +12,7 @@ public class BinarySearch {
         if (arr.length == 0 || arr[0] > value || arr[arr.length - 1] < value) {
             return -1;
         } else if (arr[0] == value) {
-            return 0;
+            return arr[0];
         } else if (arr[arr.length - 1] == value) {
             return arr.length - 1;
         }
