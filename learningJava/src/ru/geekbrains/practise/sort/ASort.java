@@ -8,7 +8,7 @@ public class ASort {
         System.out.println(Arrays.toString(sortMerge(arr)));
     }
 
-    private static int[] sortMerge(int[] arr) {
+    public static int[] sortMerge(int[] arr) {
         int len = arr.length;
         if (len < 2) return arr;
         int middle = len / 2;

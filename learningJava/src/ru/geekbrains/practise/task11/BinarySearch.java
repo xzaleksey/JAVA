@@ -6,7 +6,7 @@ public class BinarySearch {
         System.out.println(binarySearch(a, 12));
     }
 
-    static int binarySearch(int[] arr, int value)
+    public static int binarySearch(int[] arr, int value)
 
     {
         if (arr.length == 0 || arr[0] > value || arr[arr.length - 1] < value) {
