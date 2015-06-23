@@ -1,9 +1,12 @@
 package ru.geekbrains.practise.task11;
 
+import java.util.Arrays;
+
 public class BinarySearch {
     public static void main(String[] args) {
         int[] a = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12};
-        System.out.println(binarySearch(a, 12));
+        System.out.println(binarySearch(a, -1));
+        Arrays.binarySearch(a, 4);
     }
 
     public static int binarySearch(int[] arr, int value)
@@ -21,7 +24,6 @@ public class BinarySearch {
     }
 
     static int binarySearch(int[] arr, int value, int lo, int hi) {
-        if (lo > hi) return -1;
         int mid = lo + (hi - lo) / 2;
 
         if (value < arr[mid]) {

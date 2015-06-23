@@ -7,7 +7,7 @@ import java.util.regex.Pattern;
 
 public class DirList {
     public static void main(String[] args) {
-        File path = new File("C:\\git\\JAVA\\learningJava\\src\\net\\wikijava\\chapter16");
+        File path = new File(System.getProperty("user.dir") + "\\src\\net\\wikijava\\chapter16\\dirlist");
         String[] list;
 
         list = path.list(new DirFilter("[a-zA-Z]+\\u002Ejava"));

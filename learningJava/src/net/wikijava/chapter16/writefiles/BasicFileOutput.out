@@ -1,0 +1,24 @@
+1: package net.wikijava.chapter16.writefiles;
+2: 
+3: import net.wikijava.chapter16.readfiles.BufferedInputFile;
+4: 
+5: import java.io.*;
+6: 
+7: public class BasicFileOutput {
+8:     static String file = System.getProperty("user.dir")+ "\\src\\net\\wikijava\\chapter16\\writefiles\\BasicFileOutput.out";
+9:     public static void main(String[] args)
+10:             throws IOException {
+11:         BufferedReader in = new BufferedReader(
+12:                 new StringReader(
+13:                         BufferedInputFile.read(System.getProperty("user.dir")+ "\\src\\net\\wikijava\\chapter16\\writefiles\\BasicFileOutput.java")));
+14:         PrintWriter out = new PrintWriter(
+15:                 new BufferedWriter(new FileWriter(file)));
+16:         int lineCount = 1;
+17:         String s;
+18:         while((s = in.readLine()) != null )
+19:             out.println(lineCount++ + ": " + s);
+20:         out.close();
+21:         // Вывод содержимого файла
+22:         System.out.println(BufferedInputFile.read(file));
+23:     }
+24: } /* (Execute to see output) *///:~

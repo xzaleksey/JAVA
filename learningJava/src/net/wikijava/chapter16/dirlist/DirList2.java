@@ -19,7 +19,7 @@ public class DirList2 {
     }
 
     public static void main(String[] args) {
-        File path = new File("C:\\git\\JAVA\\learningJava\\src\\net\\wikijava\\chapter16");
+        File path = new File(System.getProperty("user.dir") + "\\src\\net\\wikijava\\chapter16\\dirlist");
         String[] list;
         if (args.length == 0)
             list = path.list(filter("[a-zA-Z]+\\u002Ejava"));

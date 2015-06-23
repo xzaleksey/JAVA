@@ -1,0 +1,377 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<w:document xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+            xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main"
+            mc:Ignorable="w14 wp14">
+    <w:body>
+        <w:p w:rsidR="00172CA7" w:rsidRPr="009F2AFC" w:rsidRDefault="009F2AFC" w:rsidP="009F2AFC">
+            <w:pPr>
+                <w:numPr>
+                    <w:ilvl w:val="0"/>
+                    <w:numId w:val="1"/>
+                </w:numPr>
+            </w:pPr>
+            <w:bookmarkStart w:id="0" w:name="_GoBack"/>
+            <w:bookmarkEnd w:id="0"/>
+            <w:r>
+                <w:t xml:space="preserve">Класс </w:t>
+            </w:r>
+            <w:r w:rsidRPr="009F2AFC">
+                <w:t xml:space="preserve">Login </w:t>
+            </w:r>
+            <w:r>
+                <w:t xml:space="preserve">содержит алгоритм авторизации пользователей, подгружает из ресурсов форму авторизации. При успешной авторизации запускает класс </w:t>
+            </w:r>
+            <w:r w:rsidRPr="009F2AFC">
+                <w:t>MainForm.</w:t>
+            </w:r>
+        </w:p>
+        <w:p w:rsidR="009F2AFC" w:rsidRPr="009F2AFC" w:rsidRDefault="009F2AFC" w:rsidP="009F2AFC">
+            <w:pPr>
+                <w:numPr>
+                    <w:ilvl w:val="0"/>
+                    <w:numId w:val="1"/>
+                </w:numPr>
+            </w:pPr>
+            <w:r>
+                <w:t>Класс</w:t>
+            </w:r>
+            <w:r w:rsidRPr="009F2AFC">
+                <w:t xml:space="preserve"> Order </w:t>
+            </w:r>
+            <w:r>
+                <w:t>содержит</w:t>
+            </w:r>
+            <w:r w:rsidRPr="009F2AFC">
+                <w:t xml:space="preserve"> </w:t>
+            </w:r>
+            <w:r>
+                <w:t>следующие</w:t>
+            </w:r>
+            <w:r w:rsidRPr="009F2AFC">
+                <w:t xml:space="preserve"> </w:t>
+            </w:r>
+            <w:r>
+                <w:t>поля</w:t>
+            </w:r>
+            <w:r w:rsidRPr="009F2AFC">
+                <w:t xml:space="preserve"> int index</w:t>
+            </w:r>
+            <w:r w:rsidRPr="009F2AFC">
+                <w:br/>
+                <w:t>String name, time, phone, address, product, comments , completed</w:t>
+            </w:r>
+        </w:p>
+        <w:p w:rsidR="009F2AFC" w:rsidRPr="009F2AFC" w:rsidRDefault="009F2AFC" w:rsidP="009F2AFC">
+            <w:pPr>
+                <w:ind w:left="720"/>
+            </w:pPr>
+            <w:proofErr w:type="gramStart"/>
+            <w:r>
+                <w:rPr>
+                    <w:lang w:val="en-US"/>
+                </w:rPr>
+                <w:t>Order</w:t>
+            </w:r>
+            <w:r w:rsidRPr="009F2AFC">
+                <w:t xml:space="preserve"> </w:t>
+            </w:r>
+            <w:r>
+                <w:t xml:space="preserve">реализует интерфейс </w:t>
+            </w:r>
+            <w:r w:rsidRPr="009F2AFC">
+                <w:t>Parcelable</w:t>
+            </w:r>
+            <w:r>
+                <w:t xml:space="preserve">, чтобы заказы можно было передавать между </w:t>
+            </w:r>
+            <w:r w:rsidRPr="009F2AFC">
+                <w:t>Activity.</w:t>
+            </w:r>
+            <w:proofErr w:type="gramEnd"/>
+        </w:p>
+        <w:p w:rsidR="009F2AFC" w:rsidRPr="009F2AFC" w:rsidRDefault="009F2AFC" w:rsidP="009F2AFC">
+            <w:pPr>
+                <w:numPr>
+                    <w:ilvl w:val="0"/>
+                    <w:numId w:val="1"/>
+                </w:numPr>
+            </w:pPr>
+            <w:r>
+                <w:t xml:space="preserve">Класс </w:t>
+            </w:r>
+            <w:r>
+                <w:rPr>
+                    <w:lang w:val="en-US"/>
+                </w:rPr>
+                <w:t>DomFeedParser</w:t>
+            </w:r>
+            <w:r w:rsidRPr="009F2AFC">
+                <w:t xml:space="preserve"> </w:t>
+            </w:r>
+            <w:r>
+                <w:t xml:space="preserve">парсит </w:t>
+            </w:r>
+            <w:r>
+                <w:rPr>
+                    <w:lang w:val="en-US"/>
+                </w:rPr>
+                <w:t>XML</w:t>
+            </w:r>
+            <w:r w:rsidRPr="009F2AFC">
+                <w:t xml:space="preserve"> </w:t>
+            </w:r>
+            <w:proofErr w:type="gramStart"/>
+            <w:r>
+                <w:t>файл, содержащий информацию о заказах и передает</w:t>
+            </w:r>
+            <w:proofErr w:type="gramEnd"/>
+            <w:r>
+                <w:t xml:space="preserve"> информацию в класс </w:t>
+            </w:r>
+            <w:r>
+                <w:rPr>
+                    <w:lang w:val="en-US"/>
+                </w:rPr>
+                <w:t>MainForm</w:t>
+            </w:r>
+            <w:r w:rsidRPr="009F2AFC">
+                <w:t>.</w:t>
+            </w:r>
+        </w:p>
+        <w:p w:rsidR="009F2AFC" w:rsidRPr="00CF381B" w:rsidRDefault="009F2AFC" w:rsidP="009F2AFC">
+            <w:pPr>
+                <w:numPr>
+                    <w:ilvl w:val="0"/>
+                    <w:numId w:val="1"/>
+                </w:numPr>
+            </w:pPr>
+            <w:r>
+                <w:t xml:space="preserve">Класс </w:t>
+            </w:r>
+            <w:r>
+                <w:rPr>
+                    <w:lang w:val="en-US"/>
+                </w:rPr>
+                <w:t>MainForm</w:t>
+            </w:r>
+            <w:r w:rsidRPr="009F2AFC">
+                <w:t xml:space="preserve"> </w:t>
+            </w:r>
+            <w:r>
+                <w:t xml:space="preserve">получает данные о заказах от </w:t>
+            </w:r>
+            <w:r>
+                <w:rPr>
+                    <w:lang w:val="en-US"/>
+                </w:rPr>
+                <w:t>DomFeedParser</w:t>
+            </w:r>
+            <w:r>
+                <w:t xml:space="preserve"> и отображает список заказов. Сравнивает каждый заказ с текущим временем и в зависимости от разницы во времени задает фон кнопок перехода к заказам (класс </w:t>
+            </w:r>
+            <w:r>
+                <w:rPr>
+                    <w:lang w:val="en-US"/>
+                </w:rPr>
+                <w:t>OrderForm</w:t>
+            </w:r>
+            <w:r>
+                <w:t>).</w:t>
+            </w:r>
+            <w:r w:rsidR="00CF381B">
+                <w:t xml:space="preserve"> Создает кнопки перехода к заказу</w:t>
+            </w:r>
+            <w:r w:rsidR="00CF381B" w:rsidRPr="000923FA">
+                <w:t>,</w:t>
+            </w:r>
+            <w:r w:rsidR="00CF381B">
+                <w:t xml:space="preserve"> обрабатывая данные из </w:t>
+            </w:r>
+            <w:r w:rsidR="00CF381B">
+                <w:rPr>
+                    <w:lang w:val="en-US"/>
+                </w:rPr>
+                <w:t>DomFeedParser</w:t>
+            </w:r>
+            <w:r w:rsidR="000923FA">
+                <w:t xml:space="preserve"> и </w:t>
+            </w:r>
+            <w:r w:rsidR="000923FA">
+                <w:rPr>
+                    <w:lang w:val="en-US"/>
+                </w:rPr>
+                <w:t>OrderForm</w:t>
+            </w:r>
+            <w:r w:rsidR="000923FA">
+                <w:t>(если заказ закрыт)</w:t>
+            </w:r>
+            <w:r w:rsidR="00CF381B">
+                <w:t>.</w:t>
+            </w:r>
+        </w:p>
+        <w:p w:rsidR="00CF381B" w:rsidRPr="009F2AFC" w:rsidRDefault="00CF381B" w:rsidP="009F2AFC">
+            <w:pPr>
+                <w:numPr>
+                    <w:ilvl w:val="0"/>
+                    <w:numId w:val="1"/>
+                </w:numPr>
+            </w:pPr>
+            <w:r>
+                <w:t xml:space="preserve">Класс </w:t>
+            </w:r>
+            <w:r>
+                <w:rPr>
+                    <w:lang w:val="en-US"/>
+                </w:rPr>
+                <w:t>OrderForm</w:t>
+            </w:r>
+            <w:r w:rsidRPr="00CF381B">
+                <w:t xml:space="preserve"> </w:t>
+            </w:r>
+            <w:r>
+                <w:t xml:space="preserve">получает данные от </w:t>
+            </w:r>
+            <w:r>
+                <w:rPr>
+                    <w:lang w:val="en-US"/>
+                </w:rPr>
+                <w:t>MainForm</w:t>
+            </w:r>
+            <w:r>
+                <w:t xml:space="preserve"> о конкретном заказе. Выводит все полученные данные о заказе, используя </w:t>
+            </w:r>
+            <w:r>
+                <w:rPr>
+                    <w:lang w:val="en-US"/>
+                </w:rPr>
+                <w:t>order</w:t>
+            </w:r>
+            <w:r w:rsidRPr="00CF381B">
+                <w:t>.</w:t>
+            </w:r>
+            <w:r>
+                <w:rPr>
+                    <w:lang w:val="en-US"/>
+                </w:rPr>
+                <w:t>xml</w:t>
+            </w:r>
+            <w:r w:rsidRPr="00CF381B">
+                <w:t>.</w:t>
+            </w:r>
+            <w:r>
+                <w:t xml:space="preserve"> Содержит кнопки и алгоритмы открытия карты по адресу заказа, отправку смс, вызов </w:t>
+            </w:r>
+            <w:r w:rsidR="000923FA">
+                <w:t xml:space="preserve">разместившего заказ, закрытие заказа с оставлением комментария и фото. По закрытию заказа передает данные в </w:t>
+            </w:r>
+            <w:r w:rsidR="000923FA">
+                <w:rPr>
+                    <w:lang w:val="en-US"/>
+                </w:rPr>
+                <w:t>MainForm</w:t>
+            </w:r>
+            <w:r w:rsidR="000923FA">
+                <w:t>.</w:t>
+            </w:r>
+        </w:p>
+        <w:p w:rsidR="009F2AFC" w:rsidRDefault="009F2AFC" w:rsidP="009F2AFC">
+            <w:pPr>
+                <w:ind w:left="720"/>
+                <w:rPr>
+                    <w:lang w:val="en-US"/>
+                </w:rPr>
+            </w:pPr>
+        </w:p>
+        <w:p w:rsidR="00F800A1" w:rsidRDefault="00F800A1" w:rsidP="009F2AFC">
+            <w:pPr>
+                <w:ind w:left="720"/>
+            </w:pPr>
+            <w:r>
+                <w:t>Бд (ее нет, но в целом по задумке она должна быть на сервере)</w:t>
+            </w:r>
+        </w:p>
+        <w:p w:rsidR="00F800A1" w:rsidRDefault="00F800A1" w:rsidP="009F2AFC">
+            <w:pPr>
+                <w:ind w:left="720"/>
+            </w:pPr>
+            <w:r>
+                <w:t>Данные о заказах и заказчике</w:t>
+            </w:r>
+            <w:r w:rsidR="00172CA7">
+                <w:t xml:space="preserve"> </w:t>
+            </w:r>
+            <w:r>
+                <w:t>(можно разделить.)</w:t>
+            </w:r>
+        </w:p>
+        <w:p w:rsidR="00F800A1" w:rsidRDefault="00F800A1" w:rsidP="009F2AFC">
+            <w:pPr>
+                <w:ind w:left="720"/>
+            </w:pPr>
+            <w:r>
+                <w:t>Модуль авторизации пользователя</w:t>
+            </w:r>
+        </w:p>
+        <w:p w:rsidR="00F800A1" w:rsidRDefault="00F800A1" w:rsidP="00F800A1">
+            <w:pPr>
+                <w:ind w:left="720"/>
+            </w:pPr>
+            <w:r>
+                <w:t>Модуль отображения заказов.</w:t>
+            </w:r>
+        </w:p>
+        <w:p w:rsidR="00F800A1" w:rsidRDefault="00F800A1" w:rsidP="00F800A1">
+            <w:pPr>
+                <w:ind w:left="720"/>
+            </w:pPr>
+            <w:r>
+                <w:t>Модуль заказа.</w:t>
+            </w:r>
+        </w:p>
+        <w:p w:rsidR="00F800A1" w:rsidRDefault="00F800A1" w:rsidP="009F2AFC">
+            <w:pPr>
+                <w:ind w:left="720"/>
+            </w:pPr>
+            <w:r>
+                <w:t>Модуль</w:t>
+            </w:r>
+            <w:r w:rsidR="00172CA7">
+                <w:t xml:space="preserve"> обработки </w:t>
+            </w:r>
+            <w:r w:rsidR="00172CA7">
+                <w:rPr>
+                    <w:lang w:val="en-US"/>
+                </w:rPr>
+                <w:t>XML</w:t>
+            </w:r>
+            <w:r>
+                <w:t>.</w:t>
+            </w:r>
+        </w:p>
+        <w:p w:rsidR="00F800A1" w:rsidRDefault="00F800A1" w:rsidP="009F2AFC">
+            <w:pPr>
+                <w:ind w:left="720"/>
+            </w:pPr>
+            <w:r>
+                <w:t>Модуль отправки сообщений.</w:t>
+            </w:r>
+        </w:p>
+        <w:p w:rsidR="00F800A1" w:rsidRDefault="00F800A1" w:rsidP="009F2AFC">
+            <w:pPr>
+                <w:ind w:left="720"/>
+            </w:pPr>
+        </w:p>
+        <w:p w:rsidR="00F800A1" w:rsidRPr="00F800A1" w:rsidRDefault="00F800A1" w:rsidP="009F2AFC">
+            <w:pPr>
+                <w:ind w:left="720"/>
+            </w:pPr>
+        </w:p>
+        <w:sectPr w:rsidR="00F800A1" w:rsidRPr="00F800A1">
+            <w:pgSz w:w="11906" w:h="16838"/>
+            <w:pgMar w:top="1134" w:right="850" w:bottom="1134" w:left="1701" w:header="708" w:footer="708"
+                     w:gutter="0"/>
+            <w:cols w:space="708"/>
+            <w:docGrid w:linePitch="360"/>
+        </w:sectPr>
+    </w:body>
+</w:document>
