@@ -1,4 +1,4 @@
-package net.wikijava.chapter17.threads.atomic;
+package net.wikijava.chapter17.atomic;
 
 import org.junit.Assert;
 import org.junit.Before;

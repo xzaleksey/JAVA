@@ -1,4 +1,4 @@
-package net.wikijava.chapter17.threads.atomic;
+package net.wikijava.chapter17.atomic;
 
 public class Book {
     private String name;
