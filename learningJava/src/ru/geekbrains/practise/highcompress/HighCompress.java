@@ -1,61 +1,60 @@
 package ru.geekbrains.practise.highcompress;
 
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.ObjectOutputStream;
-import java.nio.ByteBuffer;
-import java.nio.channels.FileChannel;
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.Random;
-
-import static net.mindview.util.Print.print;
 
 public class HighCompress {
-    static final char[] CHARS = {'q', 'w', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'p', 'a', 's', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'z', 'x', 'c', 'v', 'b', 'n', 'm', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0', 'а', 'б', 'в', 'г', 'д', 'е', 'ж', 'з', 'и', 'к', 'л', 'м', 'н', 'о', 'п', 'р', 'с', ' '};
-
     public static void main(String[] args) {
-        Random rnd = new Random();
-        StringBuilder stringBuilder = new StringBuilder();
-        for (int i = 0; i < 1000; i++) { //создание рандомной строки
-            stringBuilder.append(CHARS[rnd.nextInt(CHARS.length)]);
+        HashMap<String, Integer> compVoc = new HashMap<>();
+        for (int i = 97; i < 102; i++) {
+            compVoc.put(String.valueOf((char) i), i - 97);
         }
-        System.out.println(stringBuilder);
-        HashMap<Character, ArrayList<Integer>> map = new HashMap<>();
-        for (int i = 0; i < CHARS.length; i++) { //подготовка hashmap
-            map.put(CHARS[i], new ArrayList<>(100));
+        HashMap<String, String> decompVoc = new HashMap<>();
+        for (int i = 0; i < 5; i++) {
+            decompVoc.put(String.valueOf(i), String.valueOf((char) (i + 97)));
         }
-        char[] chars = stringBuilder.toString().toCharArray();
-        for (int i = 0; i < chars.length; i++) {//занесение данных в hashmap
-            map.get(chars[i]).add(i);
-        }
+        System.out.println(compress("abaabaabaabaabaaba", compVoc));
+        System.out.println("abaabaabaabaabaaba");
+        System.out.println(decompress("0105768116", decompVoc));
+    }
 
-        try (FileChannel fc = new FileOutputStream("text1.txt").getChannel()) {
-            fc.write(ByteBuffer.wrap(stringBuilder.toString().getBytes()));
-            fc.close();
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-        try (ObjectOutputStream o = new ObjectOutputStream(
-                new FileOutputStream("text.out"))) {
-            o.writeObject(map);
-            o.close();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        print("Saving object:");
-        HashMap<Integer, Character> result = new HashMap<>();
-        for (int i = 0; i < CHARS.length; i++) {
-            for (int j = 0; j < map.get(CHARS[i]).size(); j++) {
-                result.put(map.get(CHARS[i]).get(j), CHARS[i]);
+    public static String compress(String s, HashMap<String, Integer> voc) {
+        StringBuilder result = new StringBuilder();
+        StringBuilder current = new StringBuilder();
+        int length = voc.size();
+        for (int i = 0; i < s.length(); i++) {
+            Character c = s.charAt(i);
+            current.append(c);
+            if (!voc.containsKey(current.toString())) {
+                voc.put(current.toString(), length++);
+                result.append(voc.get(current.substring(0, current.length() - 1)));
+                current.setLength(0);
+                current.append(c);
             }
         }
-        for (int i = 0; i < result.size(); i++) {
-            System.out.print(result.get(i));
+
+
+        return result.append(voc.get(current.toString())).toString();
+    }
+
+    public static String decompress(String s, HashMap<String, String> voc) {
+        StringBuilder result = new StringBuilder();
+        StringBuilder current = new StringBuilder();
+        int length = voc.size();
+        for (int i = 0; i < s.length(); i++) {
+            Character c = s.charAt(i);
+            current.append(c);
+            if (!voc.containsKey(current.toString())) {
+                String temp = voc.get(current.substring(0, current.length() - 1));//предыдущие символы
+                String temp2; //текущие символы
+                temp2 = voc.get(String.valueOf(c)) != null ? voc.get(String.valueOf(c)).substring(0, 1) : temp.substring(0, 1); //проверка на повторение одних и тех же символов
+                voc.put(String.valueOf(length++), temp + temp2);
+                result.append(temp);
+                current.setLength(0);
+                current.append(c);
+            }
+
         }
+
+        return result.append(voc.get(current.toString())).toString();
     }
 }

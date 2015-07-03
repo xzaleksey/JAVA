@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<w:document xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-            xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main"
-            mc:Ignorable="w14 wp14">
+<w:document
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main"
+        mc:Ignorable="w14 w15 wp14">
     <w:body>
         <w:p w:rsidR="00172CA7" w:rsidRPr="009F2AFC" w:rsidRDefault="009F2AFC" w:rsidP="009F2AFC">
             <w:pPr>
@@ -10,54 +11,106 @@
                     <w:numId w:val="1"/>
                 </w:numPr>
             </w:pPr>
-            <w:bookmarkStart w:id="0" w:name="_GoBack"/>
-            <w:bookmarkEnd w:id="0"/>
             <w:r>
                 <w:t xml:space="preserve">Класс </w:t>
             </w:r>
             <w:r w:rsidRPr="009F2AFC">
                 <w:t xml:space="preserve">Login </w:t>
             </w:r>
+            <w:r w:rsidRPr="003B3B02">
+                <w:rPr>
+                    <w:b/>
+                </w:rPr>
+                <w:t>содержит</w:t>
+            </w:r>
             <w:r>
-                <w:t xml:space="preserve">содержит алгоритм авторизации пользователей, подгружает из ресурсов форму авторизации. При успешной авторизации запускает класс </w:t>
+                <w:t xml:space="preserve"> </w:t>
+            </w:r>
+            <w:r w:rsidRPr="00696B5B">
+                <w:t>алгоритм</w:t>
+            </w:r>
+            <w:r>
+                <w:t xml:space="preserve"> авторизации пользователей, подгружает из ресурсов форму авторизации. При успешной авторизации запускает класс </w:t>
             </w:r>
             <w:r w:rsidRPr="009F2AFC">
                 <w:t>MainForm.</w:t>
             </w:r>
         </w:p>
-        <w:p w:rsidR="009F2AFC" w:rsidRPr="009F2AFC" w:rsidRDefault="009F2AFC" w:rsidP="009F2AFC">
+        <w:p w:rsidR="009F2AFC" w:rsidRPr="003B3B02" w:rsidRDefault="009F2AFC" w:rsidP="009F2AFC">
             <w:pPr>
                 <w:numPr>
                     <w:ilvl w:val="0"/>
                     <w:numId w:val="1"/>
                 </w:numPr>
+                <w:rPr>
+                    <w:lang w:val="en-US"/>
+                </w:rPr>
             </w:pPr>
-            <w:r>
+            <w:bookmarkStart w:id="0" w:name="_GoBack"/>
+            <w:r w:rsidRPr="00696B5B">
+                <w:rPr>
+                    <w:b/>
+                </w:rPr>
                 <w:t>Класс</w:t>
             </w:r>
-            <w:r w:rsidRPr="009F2AFC">
+            <w:r w:rsidRPr="00696B5B">
+                <w:rPr>
+                    <w:b/>
+                    <w:lang w:val="en-US"/>
+                </w:rPr>
                 <w:t xml:space="preserve"> Order </w:t>
             </w:r>
-            <w:r>
+            <w:r w:rsidRPr="00696B5B">
+                <w:rPr>
+                    <w:b/>
+                </w:rPr>
                 <w:t>содержит</w:t>
             </w:r>
-            <w:r w:rsidRPr="009F2AFC">
+            <w:r w:rsidRPr="00696B5B">
+                <w:rPr>
+                    <w:b/>
+                    <w:lang w:val="en-US"/>
+                </w:rPr>
                 <w:t xml:space="preserve"> </w:t>
             </w:r>
-            <w:r>
+            <w:r w:rsidRPr="00696B5B">
+                <w:rPr>
+                    <w:b/>
+                </w:rPr>
                 <w:t>следующие</w:t>
             </w:r>
-            <w:r w:rsidRPr="009F2AFC">
+            <w:r w:rsidRPr="00696B5B">
+                <w:rPr>
+                    <w:b/>
+                    <w:lang w:val="en-US"/>
+                </w:rPr>
                 <w:t xml:space="preserve"> </w:t>
             </w:r>
-            <w:r>
+            <w:r w:rsidRPr="00696B5B">
+                <w:rPr>
+                    <w:b/>
+                </w:rPr>
                 <w:t>поля</w:t>
             </w:r>
-            <w:r w:rsidRPr="009F2AFC">
+            <w:r w:rsidRPr="00696B5B">
+                <w:rPr>
+                    <w:b/>
+                    <w:lang w:val="en-US"/>
+                </w:rPr>
                 <w:t xml:space="preserve"> int index</w:t>
             </w:r>
-            <w:r w:rsidRPr="009F2AFC">
+            <w:r w:rsidRPr="00696B5B">
+                <w:rPr>
+                    <w:b/>
+                    <w:lang w:val="en-US"/>
+                </w:rPr>
                 <w:br/>
+            </w:r>
+            <w:bookmarkEnd w:id="0"/>
+            <w:r w:rsidRPr="003B3B02">
+                <w:rPr>
+                    <w:lang w:val="en-US"/>
+                </w:rPr>
                 <w:t>String name, time, phone, address, product, comments , completed</w:t>
             </w:r>
         </w:p>
@@ -65,7 +118,6 @@
             <w:pPr>
                 <w:ind w:left="720"/>
             </w:pPr>
-            <w:proofErr w:type="gramStart"/>
             <w:r>
                 <w:rPr>
                     <w:lang w:val="en-US"/>
@@ -87,7 +139,6 @@
             <w:r w:rsidRPr="009F2AFC">
                 <w:t>Activity.</w:t>
             </w:r>
-            <w:proofErr w:type="gramEnd"/>
         </w:p>
         <w:p w:rsidR="009F2AFC" w:rsidRPr="009F2AFC" w:rsidRDefault="009F2AFC" w:rsidP="009F2AFC">
             <w:pPr>
@@ -120,13 +171,8 @@
             <w:r w:rsidRPr="009F2AFC">
                 <w:t xml:space="preserve"> </w:t>
             </w:r>
-            <w:proofErr w:type="gramStart"/>
             <w:r>
-                <w:t>файл, содержащий информацию о заказах и передает</w:t>
-            </w:r>
-            <w:proofErr w:type="gramEnd"/>
-            <w:r>
-                <w:t xml:space="preserve"> информацию в класс </w:t>
+                <w:t xml:space="preserve">файл, содержащий информацию о заказах и передает информацию в класс </w:t>
             </w:r>
             <w:r>
                 <w:rPr>

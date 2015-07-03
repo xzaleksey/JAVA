@@ -14,7 +14,7 @@ import java.util.zip.ZipFile;
 public class Doc2toHTML {
     public static void main(String[] args) {
 
-        try (ZipFile zipFile = new ZipFile((System.getProperty("user.dir") + "\\src\\ru\\geekbrains\\practise\\task27\\Courier.docx"))) {
+        try (ZipFile zipFile = new ZipFile((System.getProperty("user.dir") + "\\src\\ru\\geekbrains\\practise\\task27\\Courier1.docx"))) {
             ZipEntry entry;
             Enumeration<? extends ZipEntry> entries = zipFile.entries();
             while ((entry = entries.nextElement()) != null) {
@@ -36,66 +36,69 @@ public class Doc2toHTML {
 
             DefaultHandler handler = new DefaultHandler() {
 
-                boolean bfname = false;
-                boolean blname = false;
-                boolean bnname = false;
-                boolean bsalary = false;
-
+                boolean wt = false;
+                boolean wbOpen = false;
+                boolean wbEnd = true;
+                boolean wbFinal = false;
                 @Override
                 public void startElement(String uri, String localName, String qName,
                                          Attributes attributes) throws SAXException {
 
-                    System.out.println("Start Element :" + qName);
+//                    System.out.println("Start Element :" + qName);
 
-                    if (qName.equalsIgnoreCase("FIRSTNAME")) {
-                        bfname = true;
+                    if (qName.equalsIgnoreCase("w:t")) {
+                        wt = true;
+                        if (wbEnd) { //если не встретился тэг b
+                            if (wbOpen) { // если был открыт тэг b ранее
+                                wbOpen = false;
+                                wbFinal = true;
+                            }
+
+                        }
+                    } else if (qName.equalsIgnoreCase("w:b")) {
+                        if (!wbOpen) { //открыть тэг b, если еще не был открыт
+                            wbOpen = true;
+                            System.out.print("<b>");
+                        }
+                        wbEnd = false; // конец b еще не пришел
+
+                    } else if (qName.equalsIgnoreCase("w:r")) {
+                        wbEnd = true; //конец тэга b, если не найдем его дальше
+
+                    } else if (qName.equalsIgnoreCase("w:p")) {
+
+                        System.out.print("<p>");
                     }
-
-                    if (qName.equalsIgnoreCase("LASTNAME")) {
-                        blname = true;
-                    }
-
-                    if (qName.equalsIgnoreCase("NICKNAME")) {
-                        bnname = true;
-                    }
-
-                    if (qName.equalsIgnoreCase("SALARY")) {
-                        bsalary = true;
-                    }
-
                 }
 
                 @Override
                 public void endElement(String uri, String localName,
                                        String qName) throws SAXException {
 
-                    System.out.println("End Element :" + qName);
+                    if ("w:p".equals(qName)) {
+                        if (wbOpen) {
+                            wbOpen = false;
+                            System.out.print("</b>");
+                        }
+                        System.out.println("</p>");
+                    } else if ("w:r".equals(qName)) {
+
+                    }
 
                 }
 
                 @Override
                 public void characters(char ch[], int start, int length) throws SAXException {
 
-                    if (bfname) {
-                        System.out.println("First Name : " + new String(ch, start, length));
-                        bfname = false;
+                    if (wt) {
+                        String str = new String(ch, start, length);
+                        if (wbEnd && !wbOpen && wbFinal) {
+                            str = "</b>" + str;
+                            wbFinal = false;
+                        }
+                        System.out.print(str);
+                        wt = false;
                     }
-
-                    if (blname) {
-                        System.out.println("Last Name : " + new String(ch, start, length));
-                        blname = false;
-                    }
-
-                    if (bnname) {
-                        System.out.println("Nick Name : " + new String(ch, start, length));
-                        bnname = false;
-                    }
-
-                    if (bsalary) {
-                        System.out.println("Salary : " + new String(ch, start, length));
-                        bsalary = false;
-                    }
-
                 }
 
             };
