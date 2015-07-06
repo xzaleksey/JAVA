@@ -1,12 +1,25 @@
 package books.algorythmes.combinations;
 
+import java.io.BufferedWriter;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.OutputStreamWriter;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.HashSet;
+import java.util.TreeSet;
 
 public class LetterCombinations {
+    static HashMap<Long, ArrayList<ArrayList<Character>>> hashMap = new HashMap<>();
+    static HashSet<String> strings = new HashSet<>();
+
     public static void main(String[] args) {
         // getCombinations("dog");
-        getCombinations2("make");
+        long before = System.currentTimeMillis();
+        getCombinations2("mothe");
+        long after = System.currentTimeMillis();
+        long diff = after - before;
+        System.out.println("seccond : " + (float) diff / 1000);
     }
 
     public static void getCombinations(String s) {
@@ -24,29 +37,42 @@ public class LetterCombinations {
             return;
         }
         ArrayList<Character> characters = new ArrayList<>(s.length());
-        for (int i = 0; i < s.length(); i++) { // подготовка
+        for (int i = 0; i < s.length(); i++) { // подготовка Arraylist
             characters.add(s.charAt(i));
         }
-        outLetters(characters);
+        outLetters(characters); // Все комбинации из 1 символа
         getAllCombinations("", characters);
-        HashMap<Long, ArrayList<ArrayList<Character>>> hashMap = callRecursive(characters, new HashMap<>());
-        if (hashMap != null) {
+        callRecursive(characters);
+        //  System.out.println(hashMap);
+        if (hashMap.size() > 0) {
             for (ArrayList<ArrayList<Character>> arrayLists : hashMap.values()) {
                 for (ArrayList<Character> arrayList : arrayLists) {
                     getAllCombinations("", arrayList);
                 }
             }
-        }
 
+        }
+        try (BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(new FileOutputStream("out.txt")))) {
+            for (String string : strings) {
+                writer.write(string);
+                writer.newLine();
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     public static void outLetters(ArrayList<Character> chars) {
+        TreeSet<Character> characters = new TreeSet<>();
         for (Character aChar : chars) {
-            System.out.println(aChar);
+            characters.add(aChar);
+        }
+        for (Character character : characters) {
+            strings.add("" + character);
         }
     }
 
-    public static HashMap<Long, ArrayList<ArrayList<Character>>> callRecursive(ArrayList<Character> characters, HashMap<Long, ArrayList<ArrayList<Character>>> hashMap) {
+    public static void callRecursive(ArrayList<Character> characters) {
 
         if (characters.size() > 2) {
             ArrayList<ArrayList<Character>> arrayLists;
@@ -70,11 +96,9 @@ public class LetterCombinations {
                     arrayLists.add(tempChars);
                     hashMap.put(hash, arrayLists);
                 }
-                callRecursive(tempChars, hashMap);
+                callRecursive(tempChars);
             }
-            return hashMap;
         }
-        return null;
     }
 
     public static long getHash(ArrayList<Character> chars) {
@@ -94,7 +118,10 @@ public class LetterCombinations {
             }
             return;
         }
-        System.out.println(s + characters.get(0) + characters.get(1));
-        System.out.println(s + characters.get(1) + characters.get(0));
+        strings.add(s + characters.get(0) + characters.get(1));
+        strings.add(s + characters.get(1) + characters.get(0));
+
+//        System.out.println(s + characters.get(0) + characters.get(1));
+//        System.out.println(s + characters.get(1) + characters.get(0));
     }
 }
