@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="DataSourceManagerImpl" format="xml" hash="1015655017">
+  <component name="DataSourceManagerImpl" format="xml" hash="590262945">
     <data-source source="LOCAL" name="MySQL - feedback@localhost [2]" uuid="9986a79b-ac46-457b-b80c-675f474129eb">
       <driver-ref>mysql</driver-ref>
       <synchronize>true</synchronize>
@@ -11,6 +11,20 @@
         <property name="tinyInt1isBit" value="false" />
         <property name="characterEncoding" value="utf8" />
         <property name="characterSetResults" value="utf8" />
+        <property name="yearIsDateType" value="false" />
+      </driver-properties>
+      <libraries />
+    </data-source>
+    <data-source source="LOCAL" name="MySQL - University@mydb.cwdggskdmdmp.us-west-2.rds.amazonaws.com" uuid="5ba23301-98d1-40eb-85db-491c11c9744f">
+      <driver-ref>mysql</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>com.mysql.jdbc.Driver</jdbc-driver>
+      <jdbc-url>jdbc:mysql://mydb.cwdggskdmdmp.us-west-2.rds.amazonaws.com:3306/University</jdbc-url>
+      <driver-properties>
+        <property name="zeroDateTimeBehavior" value="convertToNull" />
+        <property name="tinyInt1isBit" value="false" />
+        <property name="characterEncoding" value="cp1251" />
+        <property name="characterSetResults" value="cp1251" />
         <property name="yearIsDateType" value="false" />
       </driver-properties>
       <libraries />
