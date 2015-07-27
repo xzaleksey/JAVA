@@ -1,4 +1,4 @@
-package ru.geekbrains.practise.mysql;
+package apps.bd.mysql;
 
 
 public class Main {

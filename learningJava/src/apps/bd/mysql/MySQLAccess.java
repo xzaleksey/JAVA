@@ -1,4 +1,4 @@
-package ru.geekbrains.practise.mysql;
+package apps.bd.mysql;
 
 import java.sql.*;
 import java.util.Date;
