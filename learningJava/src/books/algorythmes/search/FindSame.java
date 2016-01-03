@@ -1,4 +1,4 @@
-package books.algorythmes;
+package books.algorythmes.search;
 
 import ru.geekbrains.practise.sort.ASort;
 
