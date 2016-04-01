@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="dataSourceStorage">
+  <data-source name="MySQL - feedback@localhost [2]" uuid="9986a79b-ac46-457b-b80c-675f474129eb">
+    <database-info product="" version="" jdbc-version="" driver-name="" driver-version=""/>
+  </data-source>
+  <data-source name="MySQL - University@mydb.cwdggskdmdmp.us-west-2.rds.amazonaws.com" uuid="5ba23301-98d1-40eb-85db-491c11c9744f">
+    <database-info product="" version="" jdbc-version="" driver-name="" driver-version=""/>
+  </data-source>
+</component>
